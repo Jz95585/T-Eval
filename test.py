@@ -2,6 +2,9 @@ import teval.evaluators as evaluator_factory
 from teval.utils.meta_template import meta_template_dict
 from lagent.llms.huggingface import HFTransformerCasualLM, HFTransformerChat
 from lagent.llms.openai import GPTAPI
+#
+from lagent.llms.vllm_wrapper import VllmModel
+from lagent.llms.lmdeploy_wrapper import LMDeployPipeline,LMDeployServer
 import argparse
 import mmengine
 import os
@@ -12,7 +15,7 @@ import random
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset_path', type=str, default='data/instruct_v1.json')
-    parser.add_argument('--model_type', type=str, choices=['api', 'hf'], default='hf')
+    parser.add_argument('--model_type', type=str, choices=['api', 'hf','vllm','lmdeploy'], default='api')
     # hf means huggingface, if you want to use huggingface model, you should specify the path of the model
     parser.add_argument('--model_display_name', type=str, default="")
     # if not set, it will be the same as the model type, only inference the output_name of the result
@@ -48,6 +51,11 @@ def load_dataset(dataset_path, out_dir, is_resume=False, tmp_folder_name='tmp'):
     return dataset, tested_num, total_num
 
 def split_special_tokens(text):
+    #
+    text = text.split('<|eot_id|>')[0]
+    text = text.split('[/INST]')[0]
+    text = text.split('Human:')[0]
+    #
     text = text.split('<eoa>')[0]
     text = text.split('<TOKENS_UNUSED_1>')[0]
     text = text.split('<|im_end|>')[0]
@@ -71,7 +79,8 @@ def infer(dataset, llm, out_dir, tmp_folder_name='tmp', test_num = 1, batch_size
         batch_infer_ids.append(idx)
         # batch inference
         if len(batch_infer_ids) == batch_size or idx == len(random_list) - 1:
-            predictions = llm.chat(batch_infer_list, do_sample=False)
+            # predictions = llm.chat(batch_infer_list, do_sample=False)
+            predictions = llm.chat(batch_infer_list)
             for ptr, prediction in enumerate(predictions):
                 if not isinstance(prediction, str):
                     print("Warning: the output of llm is not a string, force to convert it into str")
@@ -79,9 +88,10 @@ def infer(dataset, llm, out_dir, tmp_folder_name='tmp', test_num = 1, batch_size
                 prediction = split_special_tokens(prediction)
                 data_ptr = batch_infer_ids[ptr]
                 dataset[data_ptr]['prediction'] = prediction
-                mmengine.dump(dataset[data_ptr], os.path.join(out_dir, tmp_folder_name, f'{data_ptr}.json'))
+                mmengine.dump(dataset[data_ptr], os.path.join(out_dir, tmp_folder_name, f'{data_ptr}.json'),ensure_ascii=False)
+                #mmengine.dump(dataset[data_ptr], os.path.join(out_dir, tmp_folder_name, f'{data_ptr}.json'))
             batch_infer_ids = []; batch_infer_list = []
-        
+
     # load results from cache
     results = dict()
     file_list = os.listdir(os.path.join(out_dir, tmp_folder_name))
@@ -89,7 +99,7 @@ def infer(dataset, llm, out_dir, tmp_folder_name='tmp', test_num = 1, batch_size
         file_id = filename.split('.')[0]
         results[file_id] = mmengine.load(os.path.join(out_dir, tmp_folder_name, filename))
     return results
-    
+
 if __name__ == '__main__':
     args = parse_args()
     os.makedirs(args.out_dir, exist_ok=True)
@@ -113,11 +123,17 @@ if __name__ == '__main__':
                 llm = HFTransformerChat(path=args.model_path, meta_template=meta_template)
             else:
                 llm = HFTransformerCasualLM(path=args.model_path, meta_template=meta_template, max_new_tokens=512)
+        elif args.model_type == 'vllm':
+             meta_template = meta_template_dict.get(args.meta_template)
+             llm = VllmModel(args.model_path,meta_template=meta_template,max_new_tokens=512)
+        elif args.model_type == 'lmdeploy':
+             meta_template = meta_template_dict.get(args.meta_template)
+             llm = LMDeployPipeline(args.model_path)
         print(f"Tested {tested_num} samples, left {test_num} samples, total {total_num} samples")
         prediction = infer(dataset, llm, args.out_dir, tmp_folder_name=tmp_folder_name, test_num=test_num, batch_size=args.batch_size)
         # dump prediction to out_dir
-        mmengine.dump(prediction, os.path.join(args.out_dir, args.out_name))
-
+        mmengine.dump(prediction, os.path.join(args.out_dir, args.out_name),ensure_ascii=False)
+        #mmengine.dump(prediction, os.path.join(args.out_dir, args.out_name))
     if args.eval:
         if args.model_display_name == "":
             model_display_name = args.model_type
@@ -149,4 +165,5 @@ if __name__ == '__main__':
         print(eval_results)
         results[args.eval + '_' + args.prompt_type] = eval_results
         print(f"Writing Evaluation Results to {json_path}")
-        mmengine.dump(results, json_path)
+        mmengine.dump(results, json_path,ensure_ascii=False)
+        #mmengine.dump(results, json_path)

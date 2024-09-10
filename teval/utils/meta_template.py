@@ -9,6 +9,7 @@ meta_template_dict = dict(
             end='<eoa>\n',
             generate=True)
     ],
+    #这个也不对
     llama2 = [
         dict(role='system', begin='[INST]', end='[\INST]'),
         dict(role='user', begin='[INST]', end='[\INST]'),
@@ -16,6 +17,26 @@ meta_template_dict = dict(
         dict(role='assistant',
                 begin='',
                 end='</s>',
+                generate=True),
+    ],
+    #这个是对的，输出里面没有乱七八糟的token
+    llama2_zh = [
+        dict(role='system', begin='<s>[INST]<<SYS>>', end='<</SYS>>\n'),
+        dict(role='user', begin='<s>[INST]', end='[/INST]'),
+        dict(role='function', begin='<s>[INST]', end='[/INST]'),
+        dict(role='assistant',
+                begin='',
+                end='</s>',
+                generate=True),
+    ],
+    #不对
+    llama3 = [
+        dict(role='system', begin='<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n', end='<|eot_id|>'),
+        dict(role='user', begin='<|start_header_id|>user<|end_header_id|>\n', end='<|eot_id|>'),
+        dict(role='function', begin='<|start_header_id|>user<|end_header_id|>\n', end='<|eot_id|>'),
+        dict(role='assistant',
+                begin='<|start_header_id|>assistant<|end_header_id|>\n\n',
+                end='<|eot_id|>',
                 generate=True),
     ],
     qwen = [

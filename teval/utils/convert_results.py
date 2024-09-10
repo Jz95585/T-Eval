@@ -14,11 +14,15 @@ def convert_results(result_path):
     result = mmengine.load(result_path)
     instruct_list = [(result['instruct_json']['json_format_metric'] + result['instruct_json']['json_args_em_metric']) / 2, \
                      (result['instruct_json']['string_format_metric'] + result['instruct_json']['string_args_em_metric']) / 2]
-    plan_list = [result['plan_str']['f1_score'], result['plan_json']['f1_score']]
-    reason_list = [result['reason_str']['thought'], result['rru_json']['thought']]
-    retrieve_list = [result['retrieve_str']['name'], result['rru_json']['name']]
-    understand_list = [result['understand_str']['args'], result['rru_json']['args']]
-    review_list = [result['review_str']['review_quality'], result['review_str']['review_quality']]
+    #plan_list = [result['plan_str']['f1_score'], result['plan_json']['f1_score']]
+    plan_list = [result['plan_json']['f1_score']]
+    #reason_list = [result['reason_str']['thought'], result['rru_json']['thought']]
+    reason_list = [result['reason_str']['thought']]
+    #retrieve_list = [result['retrieve_str']['name'], result['rru_json']['name']]
+    retrieve_list = [result['retrieve_str']['name']]
+    #understand_list = [result['understand_str']['args'], result['rru_json']['args']]
+    understand_list = [result['understand_str']['args']]
+    review_list = [result['review_str']['parse_rate'], result['review_str']['review_quality']]
 
     final_score = [np.mean(instruct_list), np.mean(plan_list), np.mean(reason_list), \
                    np.mean(retrieve_list), np.mean(understand_list), np.mean(review_list)]
@@ -28,7 +32,7 @@ def convert_results(result_path):
     print("Cut Paste Results: ", np.array(final_score) * 100)
     for i in range(len(name_list)):
         print("%s: %.1f" % (name_list[i], final_score[i]*100), end='\t')
-    
+
 
 if __name__ == '__main__':
     args = parse_args()

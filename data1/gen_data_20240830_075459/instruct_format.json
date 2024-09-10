@@ -1,0 +1,695 @@
+{
+    "8": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "CreditLoan.apply_for_loan",
+            "args": {
+                "personal_information": {
+                    "name": "张三",
+                    "id_number": "123456789012345678",
+                    "income": "50000"
+                },
+                "loan_amount": "100000",
+                "loan_purpose": "home_improvement"
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'CreditLoan.apply_for_loan', 'description': 'This function applies for a credit loan with specified personal information and loan details.', 'required_parameters': [{'name': 'personal_information', 'type': 'OBJECT', 'description': 'The personal information including name, id_number, and income.'}, {'name': 'loan_amount', 'type': 'STRING', 'description': 'The requested loan amount.'}, {'name': 'loan_purpose', 'type': 'STRING', 'description': 'The purpose of the loan.'}], 'return_data': [{'name': 'application_status', 'description': 'The status of the loan application.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 CreditLoan.apply_for_loan, 它的参数输入如下: 'personal_information'是{'name': '张三', 'id_number': '123456789012345678', 'income': '50000'}, 'loan_amount'是'100000', 'loan_purpose'是'home_improvement'."
+            }
+        ]
+    },
+    "9": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "CreditLoan.check_application_status",
+            "args": {
+                "application_id": "123456789"
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'CreditLoan.check_application_status', 'description': 'This function checks the status of a credit loan application using the application ID.', 'required_parameters': [{'name': 'application_id', 'type': 'STRING', 'description': 'The ID of the loan application.'}], 'return_data': [{'name': 'status', 'description': 'The current status of the loan application.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 CreditLoan.check_application_status, 它的参数输入如下: 'application_id'是'123456789'."
+            }
+        ]
+    },
+    "10": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "CreditLoan.get_repayment_methods",
+            "args": {
+                "loan_amount": 50000,
+                "interest_rate": 5.5,
+                "loan_term": 36
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'CreditLoan.get_repayment_methods', 'description': 'This function retrieves available repayment methods and their calculation for a given credit loan.', 'required_parameters': [{'name': 'loan_amount', 'type': 'NUMBER', 'description': 'The total amount of the loan.'}, {'name': 'interest_rate', 'type': 'NUMBER', 'description': 'The annual interest rate.'}, {'name': 'loan_term', 'type': 'NUMBER', 'description': 'The term of the loan in months.'}], 'return_data': [{'name': 'methods', 'description': 'A list of repayment methods with details including calculation and pros and cons.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 CreditLoan.get_repayment_methods, 它的参数输入如下: 'loan_amount'是50000, 'interest_rate'是5.5, 'loan_term'是36."
+            }
+        ]
+    },
+    "11": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "CreditLoan.suggest_optimal_plan",
+            "args": {
+                "income": 5000,
+                "expenses": 3000,
+                "current_debts": 10000,
+                "preferred_method": "fixed_installment"
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'CreditLoan.suggest_optimal_plan', 'description': 'This function suggests the most suitable repayment plan based on the user's financial situation and preferred method.', 'required_parameters': [{'name': 'income', 'type': 'NUMBER', 'description': 'The user's monthly income.'}, {'name': 'expenses', 'type': 'NUMBER', 'description': 'The user's monthly expenses.'}, {'name': 'current_debts', 'type': 'NUMBER', 'description': 'The total amount of current debts.'}, {'name': 'preferred_method', 'type': 'STRING', 'description': 'The preferred repayment method.'}], 'return_data': [{'name': 'plan', 'description': 'The suggested repayment plan with details including monthly payment and total interest.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 CreditLoan.suggest_optimal_plan, 它的参数输入如下: 'income'是5000, 'expenses'是3000, 'current_debts'是10000, 'preferred_method'是'fixed_installment'."
+            }
+        ]
+    },
+    "14": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "CreditLoan.calculate_interest_rate",
+            "args": {
+                "loan_amount": 50000,
+                "loan_term": 36,
+                "credit_score": 750
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'CreditLoan.calculate_interest_rate', 'description': 'This function calculates the interest rate for a credit loan based on the loan amount, term, and credit score.', 'required_parameters': [{'name': 'loan_amount', 'type': 'INTEGER', 'description': 'The amount of the loan.'}, {'name': 'loan_term', 'type': 'INTEGER', 'description': 'The term of the loan in months.'}, {'name': 'credit_score', 'type': 'INTEGER', 'description': 'The credit score of the borrower.'}], 'return_data': [{'name': 'interest_rate', 'description': 'The calculated interest rate for the loan.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 CreditLoan.calculate_interest_rate, 它的参数输入如下: 'loan_amount'是50000, 'loan_term'是36, 'credit_score'是750."
+            }
+        ]
+    },
+    "15": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "CreditLoan.optimize_interest_rate",
+            "args": {
+                "loan_amount": 75000,
+                "loan_term": 60,
+                "credit_score": 800
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'CreditLoan.optimize_interest_rate', 'description': 'This function optimizes the interest rate for a credit loan based on the loan amount, term, and credit score.', 'required_parameters': [{'name': 'loan_amount', 'type': 'INTEGER', 'description': 'The amount of the loan.'}, {'name': 'loan_term', 'type': 'INTEGER', 'description': 'The term of the loan in months.'}, {'name': 'credit_score', 'type': 'INTEGER', 'description': 'The credit score of the borrower.'}], 'return_data': [{'name': 'optimized_interest_rate', 'description': 'The optimized interest rate for the loan.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 CreditLoan.optimize_interest_rate, 它的参数输入如下: 'loan_amount'是75000, 'loan_term'是60, 'credit_score'是800."
+            }
+        ]
+    },
+    "24": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "RealEstateLoan.get_analysis_articles",
+            "args": {
+                "start_date": "2023-03-01",
+                "end_date": "2023-09-01"
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'RealEstateLoan.get_analysis_articles', 'description': 'This function retrieves analysis articles on real estate loan rates within a specified date range.', 'required_parameters': [{'name': 'start_date', 'type': 'STRING', 'description': 'The start date in the format YYYY-MM-DD.'}, {'name': 'end_date', 'type': 'STRING', 'description': 'The end date in the format YYYY-MM-DD.'}], 'return_data': [{'name': 'articles', 'description': 'A list of article data points, each containing the title, summary, and publication date.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 RealEstateLoan.get_analysis_articles, 它的参数输入如下: 'start_date'是'2023-03-01', 'end_date'是'2023-09-01'."
+            }
+        ]
+    },
+    "25": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "RealEstateLoan.get_current_rates",
+            "args": {
+                "region": "Guangzhou"
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'RealEstateLoan.get_current_rates', 'description': 'This function retrieves current real estate loan rates for a specified region.', 'required_parameters': [{'name': 'region', 'type': 'STRING', 'description': 'The region name.'}], 'return_data': [{'name': 'rates', 'description': 'A list of current loan rates, each containing the rate type and value.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 RealEstateLoan.get_current_rates, 它的参数输入如下: 'region'是'Guangzhou'."
+            }
+        ]
+    },
+    "40": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "Banking.get_annual_reports",
+            "args": {
+                "start_year": "2018",
+                "end_year": "2022"
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'Banking.get_annual_reports', 'description': 'This function retrieves annual reports for the Chinese banking sector within a specified year range.', 'required_parameters': [{'name': 'start_year', 'type': 'STRING', 'description': 'The start year in the format YYYY.'}, {'name': 'end_year', 'type': 'STRING', 'description': 'The end year in the format YYYY.'}], 'return_data': [{'name': 'reports', 'description': 'A list of annual reports, each containing the year and relevant financial data.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 Banking.get_annual_reports, 它的参数输入如下: 'start_year'是'2018', 'end_year'是'2022'."
+            }
+        ]
+    },
+    "41": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "Banking.get_quarterly_financials",
+            "args": {
+                "bank_names": [
+                    "工商银行",
+                    "建设银行",
+                    "农业银行",
+                    "中国银行",
+                    "交通银行"
+                ],
+                "quarter": "Q1",
+                "year": "2023"
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'Banking.get_quarterly_financials', 'description': 'This function retrieves quarterly financial reports for specified banks within a specified quarter and year.', 'required_parameters': [{'name': 'bank_names', 'type': 'LIST', 'description': 'A list of bank names.'}, {'name': 'quarter', 'type': 'STRING', 'description': 'The quarter (e.g., Q1, Q2, Q3, Q4).'}, {'name': 'year', 'type': 'STRING', 'description': 'The year in the format YYYY.'}], 'return_data': [{'name': 'financials', 'description': 'A list of quarterly financial reports, each containing the bank name, quarter, year, and relevant financial data.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 Banking.get_quarterly_financials, 它的参数输入如下: 'bank_names'是['工商银行', '建设银行', '农业银行', '中国银行', '交通银行'], 'quarter'是'Q1', 'year'是'2023'."
+            }
+        ]
+    },
+    "50": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "Banking.get_customer_satisfaction_reports",
+            "args": {
+                "bank_names": [
+                    "ICBC",
+                    "ABC",
+                    "CCB"
+                ]
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'Banking.get_customer_satisfaction_reports', 'description': 'This function retrieves customer satisfaction reports for specified banks.', 'required_parameters': [{'name': 'bank_names', 'type': 'LIST', 'description': 'A list of bank names.'}], 'return_data': [{'name': 'reports', 'description': 'A list of customer satisfaction reports, each containing the bank name and service metrics.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 Banking.get_customer_satisfaction_reports, 它的参数输入如下: 'bank_names'是['ICBC', 'ABC', 'CCB']."
+            }
+        ]
+    },
+    "51": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "Banking.get_latest_customer_feedback",
+            "args": {
+                "bank_names": [
+                    "ICBC",
+                    "ABC",
+                    "CCB"
+                ]
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'Banking.get_latest_customer_feedback', 'description': 'This function retrieves the latest customer feedback and complaint data for specified banks.', 'required_parameters': [{'name': 'bank_names', 'type': 'LIST', 'description': 'A list of bank names.'}], 'return_data': [{'name': 'feedback', 'description': 'A list of customer feedback and complaint data, each containing the bank name and feedback details.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 Banking.get_latest_customer_feedback, 它的参数输入如下: 'bank_names'是['ICBC', 'ABC', 'CCB']."
+            }
+        ]
+    },
+    "56": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "Banking.get_social_responsibility_reports",
+            "args": {
+                "bank_names": [
+                    "ICBC",
+                    "ABC",
+                    "CCB"
+                ],
+                "year": "2022"
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'Banking.get_social_responsibility_reports', 'description': 'This function retrieves social responsibility reports for specified banks and a given year.', 'required_parameters': [{'name': 'bank_names', 'type': 'LIST', 'description': 'A list of bank names.'}, {'name': 'year', 'type': 'STRING', 'description': 'The year in the format YYYY.'}], 'return_data': [{'name': 'reports', 'description': 'A list of social responsibility reports, each containing the bank name, year, and report content.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 Banking.get_social_responsibility_reports, 它的参数输入如下: 'bank_names'是['ICBC', 'ABC', 'CCB'], 'year'是'2022'."
+            }
+        ]
+    },
+    "57": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "Banking.get_public_feedback",
+            "args": {
+                "bank_names": [
+                    "BOC",
+                    "CMB",
+                    "SPDB"
+                ],
+                "start_date": "2023-01-01",
+                "end_date": "2023-12-31"
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'Banking.get_public_feedback', 'description': 'This function retrieves public feedback for specified banks within a specified date range.', 'required_parameters': [{'name': 'bank_names', 'type': 'LIST', 'description': 'A list of bank names.'}, {'name': 'start_date', 'type': 'STRING', 'description': 'The start date in the format YYYY-MM-DD.'}, {'name': 'end_date', 'type': 'STRING', 'description': 'The end date in the format YYYY-MM-DD.'}], 'return_data': [{'name': 'feedback', 'description': 'A list of public feedback entries, each containing the bank name, date, and feedback content.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 Banking.get_public_feedback, 它的参数输入如下: 'bank_names'是['BOC', 'CMB', 'SPDB'], 'start_date'是'2023-01-01', 'end_date'是'2023-12-31'."
+            }
+        ]
+    },
+    "116": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "NewsAggregator.fetch_news",
+            "args": {
+                "industry": "advanced manufacturing",
+                "start_date": "2023-07-01",
+                "end_date": "2023-09-30",
+                "count": 10
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'NewsAggregator.fetch_news', 'description': 'This function retrieves news articles for a specified industry within a specified date range and count.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry name.'}, {'name': 'start_date', 'type': 'STRING', 'description': 'The start date in the format YYYY-MM-DD.'}, {'name': 'end_date', 'type': 'STRING', 'description': 'The end date in the format YYYY-MM-DD.'}, {'name': 'count', 'type': 'INTEGER', 'description': 'The number of news articles to fetch.'}], 'return_data': [{'name': 'articles', 'description': 'A list of news articles, each containing the title, date, and summary.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 NewsAggregator.fetch_news, 它的参数输入如下: 'industry'是'advanced manufacturing', 'start_date'是'2023-07-01', 'end_date'是'2023-09-30', 'count'是10."
+            }
+        ]
+    },
+    "117": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "MarketResearch.get_market_share",
+            "args": {
+                "industry": "advanced manufacturing",
+                "companies": [
+                    "CompanyA",
+                    "CompanyB",
+                    "CompanyC"
+                ]
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'MarketResearch.get_market_share', 'description': 'This function retrieves market share data for specified companies in a specified industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry name.'}, {'name': 'companies', 'type': 'LIST', 'description': 'A list of company names.'}], 'return_data': [{'name': 'market_share', 'description': 'A dictionary with company names as keys and their respective market share percentages as values.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 MarketResearch.get_market_share, 它的参数输入如下: 'industry'是'advanced manufacturing', 'companies'是['CompanyA', 'CompanyB', 'CompanyC']."
+            }
+        ]
+    },
+    "126": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "ResearchReports.get_recent_reports",
+            "args": {
+                "industry": "advanced_manufacturing",
+                "time_frame": "1_year"
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'ResearchReports.get_recent_reports', 'description': 'This function retrieves recent research reports for a specified industry within a specified time frame.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry name.'}, {'name': 'time_frame', 'type': 'STRING', 'description': 'The time frame for the reports, e.g., 1_year.'}], 'return_data': [{'name': 'reports', 'description': 'A list of research reports, each containing the title, author, and summary.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 ResearchReports.get_recent_reports, 它的参数输入如下: 'industry'是'advanced_manufacturing', 'time_frame'是'1_year'."
+            }
+        ]
+    },
+    "127": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "CompanyData.get_international_cooperation",
+            "args": {
+                "company_names": [
+                    "CompanyA",
+                    "CompanyB"
+                ]
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'CompanyData.get_international_cooperation', 'description': 'This function retrieves international cooperation data for specified companies.', 'required_parameters': [{'name': 'company_names', 'type': 'LIST', 'description': 'A list of company names.'}], 'return_data': [{'name': 'cooperation_data', 'description': 'A list of cooperation data, each containing the company name, partner name, and project details.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 CompanyData.get_international_cooperation, 它的参数输入如下: 'company_names'是['CompanyA', 'CompanyB']."
+            }
+        ]
+    },
+    "128": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "NewsAggregator.fetch_news_articles",
+            "args": {
+                "keywords": "先进制造劳动力",
+                "start_date": "2023-01-01",
+                "end_date": "2023-12-31"
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'NewsAggregator.fetch_news_articles', 'description': 'This function retrieves news articles based on specified keywords and date range.', 'required_parameters': [{'name': 'keywords', 'type': 'STRING', 'description': 'The keywords to search for in news articles.'}, {'name': 'start_date', 'type': 'STRING', 'description': 'The start date in the format YYYY-MM-DD.'}, {'name': 'end_date', 'type': 'STRING', 'description': 'The end date in the format YYYY-MM-DD.'}], 'return_data': [{'name': 'articles', 'description': 'A list of news articles, each containing the title, summary, and publication date.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 NewsAggregator.fetch_news_articles, 它的参数输入如下: 'keywords'是'先进制造劳动力', 'start_date'是'2023-01-01', 'end_date'是'2023-12-31'."
+            }
+        ]
+    },
+    "129": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "HRDatabase.get_employee_structure",
+            "args": {
+                "company_ids": [
+                    "C001",
+                    "C002",
+                    "C003"
+                ]
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'HRDatabase.get_employee_structure', 'description': 'This function retrieves the employee structure data for specified companies.', 'required_parameters': [{'name': 'company_ids', 'type': 'LIST', 'description': 'A list of company IDs.'}], 'return_data': [{'name': 'employee_structure', 'description': 'A list of employee structure data for each company, including department distribution and headcount.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 HRDatabase.get_employee_structure, 它的参数输入如下: 'company_ids'是['C001', 'C002', 'C003']."
+            }
+        ]
+    },
+    "132": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "NewsAggregator.fetch_news_articles",
+            "args": {
+                "keywords": "先进制造品牌",
+                "start_date": "2023-01-01",
+                "end_date": "2023-06-30"
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'NewsAggregator.fetch_news_articles', 'description': 'This function retrieves news articles based on specified keywords and date range.', 'required_parameters': [{'name': 'keywords', 'type': 'STRING', 'description': 'The keywords to search for in news articles.'}, {'name': 'start_date', 'type': 'STRING', 'description': 'The start date in the format YYYY-MM-DD.'}, {'name': 'end_date', 'type': 'STRING', 'description': 'The end date in the format YYYY-MM-DD.'}], 'return_data': [{'name': 'articles', 'description': 'A list of news articles, each containing the title, summary, and publication date.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 NewsAggregator.fetch_news_articles, 它的参数输入如下: 'keywords'是'先进制造品牌', 'start_date'是'2023-01-01', 'end_date'是'2023-06-30'."
+            }
+        ]
+    },
+    "133": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "BrandAnalytics.get_brand_value",
+            "args": {
+                "company_names": [
+                    "先进制造公司A",
+                    "先进制造公司B"
+                ]
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'BrandAnalytics.get_brand_value', 'description': 'This function retrieves brand value data for specified companies.', 'required_parameters': [{'name': 'company_names', 'type': 'LIST', 'description': 'A list of company names to retrieve brand value data for.'}], 'return_data': [{'name': 'brand_values', 'description': 'A list of brand value data, each containing the company name and its brand value.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 BrandAnalytics.get_brand_value, 它的参数输入如下: 'company_names'是['先进制造公司A', '先进制造公司B']."
+            }
+        ]
+    },
+    "180": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "TaxPolicy.get_latest_pension_tax_policies",
+            "args": {
+                "region": "USA",
+                "year": "2023"
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'TaxPolicy.get_latest_pension_tax_policies', 'description': 'This function retrieves the latest tax policies related to pension plans for a specified region and year.', 'required_parameters': [{'name': 'region', 'type': 'STRING', 'description': 'The region for which the policies are applicable.'}, {'name': 'year', 'type': 'STRING', 'description': 'The year of the policies in the format YYYY.'}], 'return_data': [{'name': 'policies', 'description': 'A list of tax policy documents, each containing the policy details and applicable dates.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 TaxPolicy.get_latest_pension_tax_policies, 它的参数输入如下: 'region'是'USA', 'year'是'2023'."
+            }
+        ]
+    },
+    "181": {
+        "template": {
+            "thought": "目标",
+            "action": "名称",
+            "args": "参数输入"
+        },
+        "meta_data": {
+            "response_format": "json"
+        },
+        "ground_truth": {
+            "action": "TaxGuidance.get_pension_tax_guidance",
+            "args": {
+                "sector": "Corporate",
+                "year": "2023"
+            }
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你能够调用以下的API:\n{'name': 'TaxGuidance.get_pension_tax_guidance', 'description': 'This function retrieves tax guidance related to pension plans for a specified sector and year.', 'required_parameters': [{'name': 'sector', 'type': 'STRING', 'description': 'The sector for which the guidance is applicable (e.g., Corporate, Individual).'}, {'name': 'year', 'type': 'STRING', 'description': 'The year of the guidance in the format YYYY.'}], 'return_data': [{'name': 'guidance', 'description': 'A list of tax guidance documents, each containing the guidance details and applicable dates.'}]}\n请直接生成JSON格式的回复. 不要在回复中增加注释(//).\n\n{\n    // 你这一步的目标\n    \"目标\": string;\n    // 你要调用的API名称\n    \"名称\": string;\n    // 当前API的参数输入(JSON格式)\n    \"参数输入\": Record<string, any>;\n}\n"
+            },
+            {
+                "role": "user",
+                "content": "调用工具 TaxGuidance.get_pension_tax_guidance, 它的参数输入如下: 'sector'是'Corporate', 'year'是'2023'."
+            }
+        ]
+    }
+}

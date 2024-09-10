@@ -1,0 +1,1122 @@
+{
+    "920": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "Chevron Corporation"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'PolygonFinance.get_ticker_detail', 'description': 'Get detailed information about a stock ticker.', 'required_parameters': [{'name': 'ticker', 'type': 'STRING', 'description': 'The stock ticker symbol.'}], 'optional_parameters': [], 'return_data': [{'name': 'details', 'description': 'A dictionary containing details about the company and its stock.'}]}, {'name': 'PolygonFinance.get_stock_price', 'description': 'Get the current price of a stock.', 'required_parameters': [{'name': 'ticker', 'type': 'STRING', 'description': 'The stock ticker symbol.'}], 'optional_parameters': [], 'return_data': [{'name': 'price', 'description': 'The current price of the stock.'}]}, {'name': 'PolygonFinance.search_company', 'description': 'Search for companies based on keywords.', 'required_parameters': [{'name': 'keywords', 'type': 'STRING', 'description': 'Keywords to search for in the company name or ticker.'}], 'optional_parameters': [], 'return_data': [{'name': 'companies', 'description': 'A list of dictionaries containing information about matching companies.'}]}, {'name': 'PolygonFinance.get_company_news', 'description': 'Get recent news articles about a company.', 'required_parameters': [{'name': 'ticker', 'type': 'STRING', 'description': 'The stock ticker symbol.'}], 'optional_parameters': [], 'return_data': [{'name': 'news', 'description': 'A list of dictionaries containing recent news articles about the company.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "获取Chevron Corporation的股票代码详情。接下来，获取Chevron Corporation的当前股价。然后，搜索与Chevron相关的公司。最后，获取Chevron Corporation的最新新闻报道。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "获取Chevron Corporation的股票代码详情。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "PolygonFinance.get_ticker_detail"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'ticker'的值是什么?"
+            }
+        ]
+    },
+    "922": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "credit_score"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'CreditScore.get_credit_score', 'description': 'Get the current credit score of an individual.', 'required_parameters': [{'name': 'individual', 'type': 'STRING', 'description': 'The name of the individual whose credit score is requested.'}], 'optional_parameters': [], 'return_data': [{'name': 'credit_score', 'description': 'The current credit score of the individual.'}]}, {'name': 'AutoLoan.impact_of_credit_score', 'description': 'Query the impact of different credit scores on auto loan interest rates.', 'required_parameters': [], 'optional_parameters': [], 'return_data': [{'name': 'impact', 'description': 'A dictionary showing the impact of different credit scores on auto loan interest rates.'}]}, {'name': 'CreditScore.improve_credit_score', 'description': 'Get tips to improve credit score.', 'required_parameters': [], 'optional_parameters': [], 'return_data': [{'name': 'tips', 'description': 'A list of tips to improve credit score.'}]}, {'name': 'FinancialPlan.get_personalized_plan', 'description': 'Get personalized financial plans based on credit score.', 'required_parameters': [{'name': 'credit_score', 'type': 'INT', 'description': 'The credit score of the individual.'}], 'optional_parameters': [], 'return_data': [{'name': 'plans', 'description': 'A list of dictionaries containing personalized financial plans.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "首先，获取我的当前信用评分。然后，查询不同信用评分对汽车贷款利率的影响。接着，获取一些提高信用评分的建议。最后，根据我的信用评分，获取一些个性化的金融方案推荐。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "获取我的当前信用评分。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "CreditScore.get_credit_score"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'individual'的值是什么?"
+            }
+        ]
+    },
+    "926": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "Toyota Camry"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'AutoLoan.get_loan_details', 'description': 'Get detailed information about a car loan.', 'required_parameters': [{'name': 'car_model', 'type': 'STRING', 'description': 'The model of the car.'}], 'optional_parameters': [], 'return_data': [{'name': 'details', 'description': 'A dictionary containing details about the car loan.'}]}, {'name': 'AutoLoan.get_required_insurance', 'description': 'Get the required insurance type and coverage for a car loan.', 'required_parameters': [{'name': 'car_model', 'type': 'STRING', 'description': 'The model of the car.'}], 'optional_parameters': [], 'return_data': [{'name': 'insurance', 'description': 'A dictionary containing the required insurance type and coverage.'}]}, {'name': 'AutoLoan.compare_insurance_policies', 'description': 'Compare different insurance policies based on premiums and terms.', 'required_parameters': [{'name': 'car_model', 'type': 'STRING', 'description': 'The model of the car.'}], 'optional_parameters': [], 'return_data': [{'name': 'comparison', 'description': 'A list of dictionaries containing details about different insurance policies.'}]}, {'name': 'AutoLoan.get_financial_advice', 'description': 'Get financial advice on choosing an insurance policy.', 'required_parameters': [{'name': 'car_model', 'type': 'STRING', 'description': 'The model of the car.'}], 'optional_parameters': [], 'return_data': [{'name': 'advice', 'description': 'A dictionary containing financial advice on insurance policies.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "获取Toyota Camry的汽车贷款详情。接下来，查询Toyota Camry贷款所需的保险类型和覆盖范围。然后，比较不同保险方案的保费和条款。最后，获取一些关于Toyota Camry保险选择的金融建议。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "获取Toyota Camry的汽车贷款详情。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "AutoLoan.get_loan_details"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'car_model'的值是什么?"
+            }
+        ]
+    },
+    "932": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "Ethereum"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'CryptoFinance.get_crypto_trends', 'description': 'Get the latest market trends for a cryptocurrency.', 'required_parameters': [{'name': 'crypto', 'type': 'STRING', 'description': 'The cryptocurrency name.'}], 'optional_parameters': [], 'return_data': [{'name': 'trends', 'description': 'A dictionary containing the latest market trends for the cryptocurrency.'}]}, {'name': 'CryptoFinance.get_crypto_articles', 'description': 'Get recent articles about a cryptocurrency.', 'required_parameters': [{'name': 'crypto', 'type': 'STRING', 'description': 'The cryptocurrency name.'}], 'optional_parameters': [], 'return_data': [{'name': 'articles', 'description': 'A list of dictionaries containing recent articles about the cryptocurrency.'}]}, {'name': 'CryptoFinance.get_crypto_price', 'description': 'Get the historical price data for a cryptocurrency.', 'required_parameters': [{'name': 'crypto', 'type': 'STRING', 'description': 'The cryptocurrency name.'}, {'name': 'year', 'type': 'INTEGER', 'description': 'The year for which to get historical price data.'}, {'name': 'quarter', 'type': 'INTEGER', 'description': 'The quarter for which to get historical price data.'}], 'optional_parameters': [], 'return_data': [{'name': 'prices', 'description': 'A list of dictionaries containing historical price data for the cryptocurrency.'}]}, {'name': 'CryptoFinance.get_live_price', 'description': 'Get the current live price of a cryptocurrency.', 'required_parameters': [{'name': 'crypto', 'type': 'STRING', 'description': 'The cryptocurrency name.'}], 'optional_parameters': [], 'return_data': [{'name': 'live_price', 'description': 'The current live price of the cryptocurrency.'}]}, {'name': 'CryptoFinance.get_crypto_code', 'description': 'Get the trading code for a cryptocurrency.', 'required_parameters': [{'name': 'crypto', 'type': 'STRING', 'description': 'The cryptocurrency name.'}], 'optional_parameters': [], 'return_data': [{'name': 'code', 'description': 'The trading code for the cryptocurrency.'}]}, {'name': 'CryptoFinance.get_investment_strategies', 'description': 'Get investment strategies for a cryptocurrency.', 'required_parameters': [{'name': 'crypto', 'type': 'STRING', 'description': 'The cryptocurrency name.'}], 'optional_parameters': [], 'return_data': [{'name': 'strategies', 'description': 'A list of dictionaries containing investment strategies for the cryptocurrency.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "我需要研究Ethereum的市场趋势。首先，从最新的区块链技术文章中获取5篇与Ethereum相关的研究文章。然后，获取2024年第一季度Ethereum的历史价格数据。接着，获取Ethereum当前的实时交易数据。最后，通过加密货币名称获取Ethereum的交易代码，并获取一些投资策略。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "获取Ethereum的市场趋势。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "CryptoFinance.get_crypto_trends"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'crypto'的值是什么?"
+            }
+        ]
+    },
+    "956": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "中国消费金融产品创新"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'FinanceNews.get_articles', 'description': 'Get articles about a specific topic.', 'required_parameters': [{'name': 'topic', 'type': 'STRING', 'description': 'The topic to search for.'}], 'optional_parameters': [], 'return_data': [{'name': 'articles', 'description': 'A list of dictionaries containing articles about the topic.'}]}, {'name': 'MarketData.get_growth', 'description': 'Get growth data for a specific market.', 'required_parameters': [{'name': 'market', 'type': 'STRING', 'description': 'The market to get growth data for.'}], 'optional_parameters': [{'name': 'quarter', 'type': 'STRING', 'description': 'The quarter to get data for.'}], 'return_data': [{'name': 'growth', 'description': 'A dictionary containing growth data for the market.'}]}, {'name': 'MarketSurvey.get_acceptance', 'description': 'Get acceptance data for a specific product.', 'required_parameters': [{'name': 'product', 'type': 'STRING', 'description': 'The product to get acceptance data for.'}], 'optional_parameters': [], 'return_data': [{'name': 'acceptance', 'description': 'A dictionary containing acceptance data for the product.'}]}, {'name': 'ProductDetail.get_product_info', 'description': 'Get detailed information about a product.', 'required_parameters': [{'name': 'product_name', 'type': 'STRING', 'description': 'The name of the product.'}], 'optional_parameters': [], 'return_data': [{'name': 'info', 'description': 'A dictionary containing detailed information about the product.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "获取关于中国消费金融产品创新的最新文章。接下来，获取2024年第二季度中国消费金融产品的用户增长数据。然后，获取中国消费金融产品的市场接受度调查结果。最后，获取某消费金融产品的详细信息，并获取一些产品创新建议。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "获取关于中国消费金融产品创新的最新文章。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "FinanceNews.get_articles"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'topic'的值是什么?"
+            }
+        ]
+    },
+    "960": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "中国消费金融市场"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'FinanceReport.get_articles', 'description': 'Get articles about a specific financial market topic.', 'required_parameters': [{'name': 'topic', 'type': 'STRING', 'description': 'The topic of the financial market.'}], 'optional_parameters': [], 'return_data': [{'name': 'articles', 'description': 'A list of dictionaries containing articles about the topic.'}]}, {'name': 'FinanceReport.get_market_share', 'description': 'Get the market share changes of companies in a specific quarter.', 'required_parameters': [{'name': 'quarter', 'type': 'STRING', 'description': 'The quarter of the year.'}], 'optional_parameters': [], 'return_data': [{'name': 'market_share_changes', 'description': 'A list of dictionaries containing market share changes.'}]}, {'name': 'FinanceReport.get_brand_influence', 'description': 'Get the brand influence ranking of companies in a specific market.', 'required_parameters': [{'name': 'market', 'type': 'STRING', 'description': 'The specific market.'}], 'optional_parameters': [], 'return_data': [{'name': 'brand_influence_ranking', 'description': 'A list of dictionaries containing brand influence ranking.'}]}, {'name': 'FinanceReport.get_competition_strategy', 'description': 'Get the competition strategy of a specific company.', 'required_parameters': [{'name': 'company_name', 'type': 'STRING', 'description': 'The name of the company.'}], 'optional_parameters': [], 'return_data': [{'name': 'competition_strategy', 'description': 'A dictionary containing the competition strategy.'}]}, {'name': 'FinanceReport.get_market_competition_advice', 'description': 'Get competition advice for a specific market.', 'required_parameters': [{'name': 'market', 'type': 'STRING', 'description': 'The specific market.'}], 'optional_parameters': [], 'return_data': [{'name': 'competition_advice', 'description': 'A list of dictionaries containing competition advice.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "获取关于中国消费金融市场的5篇最新文章。接下来，获取2024年第四季度中国消费金融公司的市场份额变化数据。然后，获取中国消费金融公司的品牌影响力排名。最后，获取某消费金融公司的竞争策略，并获取一些市场竞争建议。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "获取关于中国消费金融市场的5篇最新文章。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "FinanceReport.get_articles"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'topic'的值是什么?"
+            }
+        ]
+    },
+    "962": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "交通运输行业"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'FinanceData.get_industry_cost', 'description': 'Get the operational cost data of a specific industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry name.'}], 'optional_parameters': [], 'return_data': [{'name': 'cost_data', 'description': 'A dictionary containing operational cost data of the industry.'}]}, {'name': 'FinanceData.search_practical_cases', 'description': 'Search for practical cases based on keywords.', 'required_parameters': [{'name': 'keywords', 'type': 'STRING', 'description': 'Keywords to search for in the practical cases.'}], 'optional_parameters': [], 'return_data': [{'name': 'cases', 'description': 'A list of dictionaries containing information about matching practical cases.'}]}, {'name': 'FinanceData.get_market_share', 'description': 'Get the market share of companies in a specific industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry name.'}], 'optional_parameters': [{'name': 'num_companies', 'type': 'INTEGER', 'description': 'Number of companies to retrieve market share for.'}], 'return_data': [{'name': 'market_share', 'description': 'A list of dictionaries containing market share data of companies.'}]}, {'name': 'FinanceData.get_policy_adjustments', 'description': 'Get recent policy adjustments of a specific industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry name.'}], 'optional_parameters': [], 'return_data': [{'name': 'policy_adjustments', 'description': 'A list of dictionaries containing recent policy adjustments of the industry.'}]}]"
+            },
+            {
+                "role": "user",
+                "content": "我准备分析量化投资在交通运输行业的应用。首先，获取交通运输行业的运营成本数据。然后，查找五篇关于交通运输量化投资的实践经验。接着，分析八家运输企业的市场占有率。最后，获取交通运输行业的政策调整信息。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "获取交通运输行业的运营成本数据。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "FinanceData.get_industry_cost"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'industry'的值是什么?"
+            }
+        ]
+    },
+    "966": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "旅游行业客流量数据"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'TravelData.get_tourism_flow', 'description': 'Get historical and current tourism flow data.', 'required_parameters': [{'name': 'location', 'type': 'STRING', 'description': 'The location for which to retrieve tourism flow data.'}], 'optional_parameters': [], 'return_data': [{'name': 'tourism_flow', 'description': 'A dictionary containing historical and current tourism flow data.'}]}, {'name': 'InvestmentAnalysis.search_quantitative_investment', 'description': 'Search for quantitative investment strategies in the tourism sector.', 'required_parameters': [{'name': 'sector', 'type': 'STRING', 'description': 'The sector to search for quantitative investment strategies.'}], 'optional_parameters': [], 'return_data': [{'name': 'strategies', 'description': 'A list of dictionaries containing quantitative investment strategies.'}]}, {'name': 'BrandInfluence.analyze_brand_impact', 'description': 'Analyze the brand influence of a company.', 'required_parameters': [{'name': 'company', 'type': 'STRING', 'description': 'The company to analyze brand influence.'}], 'optional_parameters': [], 'return_data': [{'name': 'brand_influence', 'description': 'A dictionary containing brand influence analysis.'}]}, {'name': 'EconomicFactors.get_macro_economic_impact', 'description': 'Get macroeconomic impact factors for a specific industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry for which to retrieve macroeconomic impact factors.'}], 'optional_parameters': [], 'return_data': [{'name': 'macro_factors', 'description': 'A dictionary containing macroeconomic impact factors.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "获取旅游行业的客流量数据。接下来，查找八篇关于旅游量化投资策略的分析报告。然后，分析三家旅游公司的品牌影响力。最后，获取旅游行业的宏观经济影响因素。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "获取旅游行业的客流量数据。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "TravelData.get_tourism_flow"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'location'的值是什么?"
+            }
+        ]
+    },
+    "967": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "旅游量化投资策略"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'InvestmentAnalysis.search_quantitative_investment', 'description': 'Search for quantitative investment strategies in the tourism sector.', 'required_parameters': [{'name': 'sector', 'type': 'STRING', 'description': 'The sector to search for quantitative investment strategies.'}], 'optional_parameters': [], 'return_data': [{'name': 'strategies', 'description': 'A list of dictionaries containing quantitative investment strategies.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "查找八篇关于旅游量化投资策略的分析报告。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "查找八篇关于旅游量化投资策略的分析报告。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "InvestmentAnalysis.search_quantitative_investment"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'sector'的值是什么?"
+            }
+        ]
+    },
+    "968": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "电力行业"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'EnergyData.get_power_generation', 'description': 'Get power generation data for the electricity industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry to get power generation data for.'}], 'optional_parameters': [], 'return_data': [{'name': 'generation_data', 'description': 'A dictionary containing power generation data.'}]}, {'name': 'InvestmentResearch.find_quantitative_investment_reviews', 'description': 'Find professional reviews on quantitative investment strategies.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry to find reviews for.'}], 'optional_parameters': [{'name': 'number_of_reviews', 'type': 'INTEGER', 'description': 'The number of reviews to find.'}], 'return_data': [{'name': 'reviews', 'description': 'A list of dictionaries containing review details.'}]}, {'name': 'CompanyAnalysis.analyze_cost_control', 'description': 'Analyze the cost control ability of companies.', 'required_parameters': [{'name': 'companies', 'type': 'LIST', 'description': 'A list of company names to analyze.'}], 'optional_parameters': [], 'return_data': [{'name': 'analysis', 'description': 'A list of dictionaries containing cost control analysis.'}]}, {'name': 'EnergyData.get_price_mechanism', 'description': 'Get the price mechanism for the electricity industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry to get the price mechanism for.'}], 'optional_parameters': [], 'return_data': [{'name': 'price_mechanism', 'description': 'A dictionary containing details about the price mechanism.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "我打算研究量化投资在电力行业的表现。首先，收集电力行业的发电量数据。然后，查找八篇关于电力量化投资策略的专业评论。接着，分析三家电力企业的成本控制能力。最后，获取电力行业的价格机制。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "收集电力行业的发电量数据。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "EnergyData.get_power_generation"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'industry'的值是什么?"
+            }
+        ]
+    },
+    "980": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "纺织行业"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'TradeData.get_import_export', 'description': 'Get import and export data for a specific industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry to get data for.'}], 'optional_parameters': [], 'return_data': [{'name': 'data', 'description': 'A dictionary containing import and export data.'}]}, {'name': 'ResearchPapers.search_papers', 'description': 'Search for research papers based on keywords.', 'required_parameters': [{'name': 'keywords', 'type': 'STRING', 'description': 'Keywords to search for in the paper title or content.'}], 'optional_parameters': [], 'return_data': [{'name': 'papers', 'description': 'A list of dictionaries containing information about matching papers.'}]}, {'name': 'CompanyAnalysis.analyze_production', 'description': 'Analyze the production process of specific companies.', 'required_parameters': [{'name': 'companies', 'type': 'LIST', 'description': 'A list of company names to analyze.'}], 'optional_parameters': [], 'return_data': [{'name': 'analysis', 'description': 'A list of dictionaries containing analysis of the production processes.'}]}, {'name': 'IndustryStandards.get_quality_standards', 'description': 'Get quality standards for a specific industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry to get quality standards for.'}], 'optional_parameters': [], 'return_data': [{'name': 'standards', 'description': 'A dictionary containing quality standards.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "收集纺织行业的进出口数据。接下来，查找八篇关于纺织量化投资策略的专业文章。然后，分析五家纺织企业的生产工艺。最后，获取纺织行业的质量检测标准。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "收集纺织行业的进出口数据。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "TradeData.get_import_export"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'industry'的值是什么?"
+            }
+        ]
+    },
+    "981": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "纺织行业"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'MarketData.fetch_industry_trends', 'description': 'Fetch current trends for a specific industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry to fetch trends for.'}], 'optional_parameters': [], 'return_data': [{'name': 'trends', 'description': 'A dictionary containing current industry trends.'}]}, {'name': 'InvestmentStrategies.search_strategies', 'description': 'Search for investment strategies based on industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry to search strategies for.'}], 'optional_parameters': [], 'return_data': [{'name': 'strategies', 'description': 'A list of dictionaries containing information about matching investment strategies.'}]}, {'name': 'CompanyProfiles.get_company_profiles', 'description': 'Get profiles of specific companies.', 'required_parameters': [{'name': 'companies', 'type': 'LIST', 'description': 'A list of company names to get profiles for.'}], 'optional_parameters': [], 'return_data': [{'name': 'profiles', 'description': 'A list of dictionaries containing company profiles.'}]}, {'name': 'QualityControl.get_industry_standards', 'description': 'Get quality control standards for a specific industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry to get quality standards for.'}], 'optional_parameters': [], 'return_data': [{'name': 'standards', 'description': 'A dictionary containing quality control standards.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "探究纺织行业当前的市场趋势。接下来，查找适用于纺织行业的量化投资策略。然后，获取五家纺织企业的公司概况。最后，获取纺织行业的质量控制标准。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "探究纺织行业当前的市场趋势。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "MarketData.fetch_industry_trends"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'industry'的值是什么?"
+            }
+        ]
+    },
+    "984": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "机械行业生产效率数据"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'IndustryData.get_production_efficiency', 'description': 'Get production efficiency data for a specific industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry for which to retrieve production efficiency data.'}], 'optional_parameters': [], 'return_data': [{'name': 'efficiency_data', 'description': 'A dictionary containing production efficiency data for the specified industry.'}]}, {'name': 'ResearchPapers.search_papers', 'description': 'Search for research papers based on keywords.', 'required_parameters': [{'name': 'keywords', 'type': 'STRING', 'description': 'Keywords to search for in the paper title or abstract.'}], 'optional_parameters': [], 'return_data': [{'name': 'papers', 'description': 'A list of dictionaries containing information about matching research papers.'}]}, {'name': 'CompanyAnalysis.get_company_service_quality', 'description': 'Get service quality analysis for a specific company.', 'required_parameters': [{'name': 'company', 'type': 'STRING', 'description': 'The company for which to retrieve service quality analysis.'}], 'optional_parameters': [], 'return_data': [{'name': 'service_quality', 'description': 'A dictionary containing service quality analysis for the specified company.'}]}, {'name': 'IndustryPolicies.get_industry_upgrades', 'description': 'Get industry upgrade policies.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry for which to retrieve upgrade policies.'}], 'optional_parameters': [], 'return_data': [{'name': 'policies', 'description': 'A list of dictionaries containing industry upgrade policies.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "获取机械行业的生产效率数据。接下来，查找八篇关于机械量化投资策略的分析。然后，分析三家机械企业的售后服务质量。最后，获取机械行业的产业升级政策。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "获取机械行业的生产效率数据。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "IndustryData.get_production_efficiency"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'industry'的值是什么?"
+            }
+        ]
+    },
+    "985": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "机械量化投资策略分析"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'ResearchPapers.search_papers', 'description': 'Search for research papers based on keywords.', 'required_parameters': [{'name': 'keywords', 'type': 'STRING', 'description': 'Keywords to search for in the paper title or abstract.'}], 'optional_parameters': [], 'return_data': [{'name': 'papers', 'description': 'A list of dictionaries containing information about matching research papers.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "查找八篇关于机械量化投资策略的分析。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "查找八篇关于机械量化投资策略的分析。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "ResearchPapers.search_papers"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'keywords'的值是什么?"
+            }
+        ]
+    },
+    "990": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "互联网金融行业"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'FinanceReport.get_latest_data', 'description': 'Get the latest data on a specific financial sector.', 'required_parameters': [{'name': 'sector', 'type': 'STRING', 'description': 'The financial sector to retrieve data for.'}], 'optional_parameters': [], 'return_data': [{'name': 'data', 'description': 'A dictionary containing the latest data about the sector.'}]}, {'name': 'FinanceReport.get_company_financials', 'description': 'Get financial statements for a company.', 'required_parameters': [{'name': 'company', 'type': 'STRING', 'description': 'The name of the company.'}], 'optional_parameters': [], 'return_data': [{'name': 'financials', 'description': 'A list of dictionaries containing financial statements.'}]}, {'name': 'FinanceReport.get_expert_analysis', 'description': 'Get expert analysis on a financial sector.', 'required_parameters': [{'name': 'sector', 'type': 'STRING', 'description': 'The financial sector to analyze.'}], 'optional_parameters': [{'name': 'years', 'type': 'INT', 'description': 'Number of years for future predictions.'}], 'return_data': [{'name': 'analysis', 'description': 'A list of dictionaries containing expert analysis.'}]}, {'name': 'FinanceReport.get_government_regulations', 'description': 'Get the latest government regulations on a financial sector.', 'required_parameters': [{'name': 'sector', 'type': 'STRING', 'description': 'The financial sector to retrieve regulations for.'}], 'optional_parameters': [], 'return_data': [{'name': 'regulations', 'description': 'A list of dictionaries containing the latest regulations.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "我想研究互联网金融行业的发展趋势。首先，从权威报告中获取互联网金融行业的最新数据。接下来，查询5家知名互联网金融公司的财务报表。然后，获取相关专家对互联网金融未来三年的预测分析。最后，查找政府针对互联网金融出台的最新政策法规。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "从权威报告中获取互联网金融行业的最新数据。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "FinanceReport.get_latest_data"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'sector'的值是什么?"
+            }
+        ]
+    },
+    "992": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "互联网金融理财产品"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'FinanceTools.get_product_details', 'description': 'Get detailed information about financial products.', 'required_parameters': [{'name': 'product_type', 'type': 'STRING', 'description': 'The type of financial product.'}], 'optional_parameters': [], 'return_data': [{'name': 'details', 'description': 'A list of dictionaries containing details about the financial products.'}]}, {'name': 'FinanceTools.get_product_performance', 'description': 'Get the performance data of a financial product.', 'required_parameters': [{'name': 'product_id', 'type': 'STRING', 'description': 'The unique identifier of the financial product.'}], 'optional_parameters': [], 'return_data': [{'name': 'performance', 'description': 'A dictionary containing performance data of the financial product.'}]}, {'name': 'FinanceTools.search_product_reviews', 'description': 'Search for reviews of financial products.', 'required_parameters': [{'name': 'product_type', 'type': 'STRING', 'description': 'The type of financial product.'}], 'optional_parameters': [], 'return_data': [{'name': 'reviews', 'description': 'A list of dictionaries containing reviews of the financial products.'}]}, {'name': 'FinanceTools.get_investment_requirements', 'description': 'Get the investment requirements and redemption rules of a financial product.', 'required_parameters': [{'name': 'product_id', 'type': 'STRING', 'description': 'The unique identifier of the financial product.'}], 'optional_parameters': [], 'return_data': [{'name': 'requirements', 'description': 'A dictionary containing investment requirements and redemption rules of the financial product.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "首先，获取市面上常见的10种互联网金融理财产品的详细介绍。接下来，查询这些产品的收益率和风险评级。然后，了解用户对这些产品的评价和反馈。最后，分析不同产品的投资门槛和赎回规则。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "获取市面上常见的10种互联网金融理财产品的详细介绍。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "FinanceTools.get_product_details"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'product_type'的值是什么?"
+            }
+        ]
+    },
+    "993": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "互联网金融理财产品"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'FinanceData.get_product_list', 'description': 'Get a list of financial products.', 'required_parameters': [{'name': 'product_category', 'type': 'STRING', 'description': 'The category of financial products.'}], 'optional_parameters': [], 'return_data': [{'name': 'products', 'description': 'A list of dictionaries containing information about the financial products.'}]}, {'name': 'FinanceData.get_product_yield', 'description': 'Get the yield of a financial product.', 'required_parameters': [{'name': 'product_id', 'type': 'STRING', 'description': 'The unique identifier of the financial product.'}], 'optional_parameters': [], 'return_data': [{'name': 'yield', 'description': 'The yield of the financial product.'}]}, {'name': 'FinanceData.get_product_risk_rating', 'description': 'Get the risk rating of a financial product.', 'required_parameters': [{'name': 'product_id', 'type': 'STRING', 'description': 'The unique identifier of the financial product.'}], 'optional_parameters': [], 'return_data': [{'name': 'risk_rating', 'description': 'The risk rating of the financial product.'}]}, {'name': 'FinanceData.get_product_investment_info', 'description': 'Get investment information of a financial product.', 'required_parameters': [{'name': 'product_id', 'type': 'STRING', 'description': 'The unique identifier of the financial product.'}], 'optional_parameters': [], 'return_data': [{'name': 'investment_info', 'description': 'A dictionary containing investment information of the financial product.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "首先，获取市面上常见的10种互联网金融理财产品的详细介绍。接下来，查询这些产品的收益率和风险评级。然后，了解用户对这些产品的评价和反馈。最后，分析不同产品的投资门槛和赎回规则。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "获取市面上常见的10种互联网金融理财产品的详细介绍。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "FinanceData.get_product_list"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'product_category'的值是什么?"
+            }
+        ]
+    },
+    "996": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "BlockchainTech"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'RegulatoryLandscape.get_laws', 'description': '获取特定领域的法律法规。', 'required_parameters': [{'name': 'domain', 'type': 'STRING', 'description': '法律法规的领域。'}], 'optional_parameters': [], 'return_data': [{'name': 'laws', 'description': '该领域相关的法律法规列表。'}]}, {'name': 'RegulatoryLandscape.get_penalty_cases', 'description': '查询特定领域违规行为的处罚案例。', 'required_parameters': [{'name': 'domain', 'type': 'STRING', 'description': '违规行为的领域。'}], 'optional_parameters': [], 'return_data': [{'name': 'cases', 'description': '违规行为的处罚案例列表。'}]}, {'name': 'RegulatoryLandscape.get_technology_updates', 'description': '获取特定领域监管技术的最新发展。', 'required_parameters': [{'name': 'domain', 'type': 'STRING', 'description': '监管技术的领域。'}], 'optional_parameters': [], 'return_data': [{'name': 'updates', 'description': '监管技术的最新发展列表。'}]}, {'name': 'RegulatoryLandscape.get_policy_impact', 'description': '研究特定领域监管政策的影响。', 'required_parameters': [{'name': 'domain', 'type': 'STRING', 'description': '监管政策的领域。'}], 'optional_parameters': [], 'return_data': [{'name': 'impact', 'description': '监管政策的影响分析。'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "获取BlockchainTech的国内外监管法律法规。接下来，查询BlockchainTech监管部门对违规行为的处罚案例。然后，了解BlockchainTech监管技术的最新发展。最后，研究监管政策对BlockchainTech创新的影响。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "获取BlockchainTech的国内外监管法律法规。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "RegulatoryLandscape.get_laws"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'domain'的值是什么?"
+            }
+        ]
+    },
+    "1002": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "消费信贷互联网金融产品"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'FinanceTools.get_internet_finance_products', 'description': '获取互联网金融产品列表，特别是消费信贷领域。', 'required_parameters': [{'name': 'category', 'type': 'STRING', 'description': '产品类别，如消费信贷。'}], 'optional_parameters': [], 'return_data': [{'name': 'products', 'description': '消费信贷互联网金融产品的列表。'}]}, {'name': 'FinanceTools.query_product_details', 'description': '查询互联网金融产品的信贷额度和利率设定。', 'required_parameters': [{'name': 'product_id', 'type': 'STRING', 'description': '产品ID。'}], 'optional_parameters': [], 'return_data': [{'name': 'details', 'description': '产品信贷额度和利率的详细信息。'}]}, {'name': 'FinanceTools.analyze_user_behavior', 'description': '研究用户的消费信贷行为数据。', 'required_parameters': [], 'optional_parameters': [], 'return_data': [{'name': 'behavior_data', 'description': '用户消费信贷行为的分析数据。'}]}, {'name': 'FinanceTools.evaluate_loan_approval_efficiency', 'description': '分析互联网金融如何提升消费信贷的审批效率。', 'required_parameters': [], 'optional_parameters': [], 'return_data': [{'name': 'efficiency_analysis', 'description': '审批效率提升的分析报告。'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "获取消费信贷领域的互联网金融产品列表。接下来，查询这些产品的信贷额度和利率设定。然后，研究用户的消费信贷行为数据。最后，分析互联网金融如何提升消费信贷的审批效率。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "获取消费信贷领域的互联网金融产品列表。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "FinanceTools.get_internet_finance_products"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'category'的值是什么?"
+            }
+        ]
+    },
+    "1003": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "消费信贷互联网金融产品"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'FinanceData.search_consumer_finance_products', 'description': '搜索消费信贷领域的互联网金融产品。', 'required_parameters': [{'name': 'product_type', 'type': 'STRING', 'description': '产品类型，如消费信贷。'}], 'optional_parameters': [], 'return_data': [{'name': 'product_list', 'description': '消费信贷互联网金融产品列表。'}]}, {'name': 'FinanceData.fetch_product_credit_details', 'description': '获取互联网金融产品的信贷额度和利率信息。', 'required_parameters': [{'name': 'product_id', 'type': 'STRING', 'description': '产品ID。'}], 'optional_parameters': [], 'return_data': [{'name': 'credit_details', 'description': '信贷额度和利率的详细信息。'}]}, {'name': 'FinanceData.analyze_consumer_behavior', 'description': '分析用户的消费信贷行为。', 'required_parameters': [], 'optional_parameters': [], 'return_data': [{'name': 'behavior_analysis', 'description': '用户消费信贷行为的分析报告。'}]}, {'name': 'FinanceData.assess_loan_processing_speed', 'description': '评估互联网金融对消费信贷审批效率的影响。', 'required_parameters': [], 'optional_parameters': [], 'return_data': [{'name': 'speed_assessment', 'description': '审批效率提升的评估结果。'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "获取消费信贷领域的互联网金融产品列表。接下来，查询这些产品的信贷额度和利率设定。然后，研究用户的消费信贷行为数据。最后，分析互联网金融如何提升消费信贷的审批效率。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "获取消费信贷领域的互联网金融产品列表。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "FinanceData.search_consumer_finance_products"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'product_type'的值是什么?"
+            }
+        ]
+    },
+    "1004": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "互联网金融行业"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'FinanceJobBoard.get_job_requirements', 'description': 'Get the job requirements for a specific industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry to search for job requirements.'}], 'optional_parameters': [], 'return_data': [{'name': 'requirements', 'description': 'A list of dictionaries containing job requirements for the specified industry.'}]}, {'name': 'FinanceJobBoard.get_salary_info', 'description': 'Get salary information for different positions in an industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry to search for salary information.'}], 'optional_parameters': [], 'return_data': [{'name': 'salaries', 'description': 'A list of dictionaries containing salary information for different positions in the specified industry.'}]}, {'name': 'FinanceJobBoard.search_job_listings', 'description': 'Search for job listings in a specific industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry to search for job listings.'}], 'optional_parameters': [], 'return_data': [{'name': 'listings', 'description': 'A list of dictionaries containing job listings for the specified industry.'}]}, {'name': 'FinanceJobBoard.get_industry_advice', 'description': 'Get career advice from industry professionals.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry to get career advice for.'}], 'optional_parameters': [], 'return_data': [{'name': 'advice', 'description': 'A list of dictionaries containing career advice from professionals in the specified industry.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "了解互联网金融行业的岗位需求和技能要求。接下来，查询不同岗位的薪资待遇水平。然后，获取互联网金融企业的招聘信息。最后，咨询业内人士关于职业发展规划的建议。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "了解互联网金融行业的岗位需求和技能要求。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "FinanceJobBoard.get_job_requirements"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'industry'的值是什么?"
+            }
+        ]
+    },
+    "1005": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "互联网金融行业"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'FinanceCareerPath.get_industry_overview', 'description': 'Get an overview of a specific industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry to get an overview for.'}], 'optional_parameters': [], 'return_data': [{'name': 'overview', 'description': 'A dictionary containing an overview of the specified industry.'}]}, {'name': 'FinanceCareerPath.get_skill_requirements', 'description': 'Get the skill requirements for different roles in an industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry to search for skill requirements.'}], 'optional_parameters': [], 'return_data': [{'name': 'skills', 'description': 'A list of dictionaries containing skill requirements for different roles in the specified industry.'}]}, {'name': 'FinanceCareerPath.get_salary_bands', 'description': 'Get salary bands for different roles in an industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry to search for salary bands.'}], 'optional_parameters': [], 'return_data': [{'name': 'bands', 'description': 'A list of dictionaries containing salary bands for different roles in the specified industry.'}]}, {'name': 'FinanceCareerPath.get_career_advice', 'description': 'Get career advice for a specific industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry to get career advice for.'}], 'optional_parameters': [], 'return_data': [{'name': 'advice', 'description': 'A list of dictionaries containing career advice for the specified industry.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "了解互联网金融行业的岗位需求和技能要求。接下来，查询不同岗位的薪资待遇水平。然后，获取互联网金融企业的招聘信息。最后，咨询业内人士关于职业发展规划的建议。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "了解互联网金融行业的岗位需求和技能要求。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "FinanceCareerPath.get_skill_requirements"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'industry'的值是什么?"
+            }
+        ]
+    },
+    "1008": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "Alibaba Group"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'CrossBorderFinance.get_case_studies', 'description': 'Get case studies on the use of internet finance in cross-border e-commerce.', 'required_parameters': [{'name': 'company', 'type': 'STRING', 'description': 'The company name.'}], 'optional_parameters': [], 'return_data': [{'name': 'case_studies', 'description': 'A list of dictionaries containing case studies.'}]}, {'name': 'CrossBorderFinance.get_trade_volume', 'description': 'Get the trade volume and growth trend of cross-border e-commerce.', 'required_parameters': [], 'optional_parameters': [], 'return_data': [{'name': 'trade_volume', 'description': 'The current trade volume.'}, {'name': 'growth_trend', 'description': 'The growth trend of the trade volume.'}]}, {'name': 'CrossBorderFinance.get_payment_solutions', 'description': 'Get information on how internet finance solves cross-border payment issues.', 'required_parameters': [], 'optional_parameters': [], 'return_data': [{'name': 'payment_solutions', 'description': 'A list of dictionaries containing payment solutions.'}]}, {'name': 'CrossBorderFinance.get_policy_impact', 'description': 'Get analysis on how policies affect internet finance in cross-border e-commerce.', 'required_parameters': [], 'optional_parameters': [], 'return_data': [{'name': 'policy_impact', 'description': 'A dictionary containing policy impact analysis.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "收集阿里巴巴集团在跨境电商中使用互联网金融服务的案例。接下来，查询跨境电商的交易规模和增长趋势。然后，了解互联网金融如何解决跨境支付的问题。最后，分析相关政策对跨境电商互联网金融的影响。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "收集阿里巴巴集团在跨境电商中使用互联网金融服务的案例。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "CrossBorderFinance.get_case_studies"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'company'的值是什么?"
+            }
+        ]
+    },
+    "1012": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "网红经济品牌营销"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'AcademicSearch.find_papers', 'description': 'Find academic papers based on keywords.', 'required_parameters': [{'name': 'keywords', 'type': 'STRING', 'description': 'Keywords to search for in the paper titles or abstracts.'}], 'optional_parameters': [], 'return_data': [{'name': 'papers', 'description': 'A list of dictionaries containing information about matching papers.'}]}, {'name': 'MarketingData.get_case_studies', 'description': 'Get case studies of successful brand marketing campaigns.', 'required_parameters': [{'name': 'keywords', 'type': 'STRING', 'description': 'Keywords to filter the case studies.'}], 'optional_parameters': [], 'return_data': [{'name': 'case_studies', 'description': 'A list of dictionaries containing information about matching case studies.'}]}, {'name': 'TrendAnalysis.get_current_trends', 'description': 'Get current trends in a specific field.', 'required_parameters': [{'name': 'field', 'type': 'STRING', 'description': 'The field to analyze for trends.'}], 'optional_parameters': [], 'return_data': [{'name': 'trends', 'description': 'A list of dictionaries containing information about current trends.'}]}, {'name': 'MarketingPlatform.get_strategy_and_costs', 'description': 'Get marketing strategies and cost estimations for a specific field.', 'required_parameters': [{'name': 'field', 'type': 'STRING', 'description': 'The field to analyze for marketing strategies.'}], 'optional_parameters': [], 'return_data': [{'name': 'strategies', 'description': 'A list of dictionaries containing marketing strategies.'}, {'name': 'costs', 'description': 'A list of dictionaries containing cost estimations.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "我希望了解网红经济中的品牌营销模式。首先，在学术文献库中获取4篇关于网红经济品牌营销的研究论文。然后，查询知名品牌借助网红营销的成功案例数据。接着，获取当前网红经济品牌营销的热门趋势。最后，通过营销平台获取品牌在网红经济下的推广策略，并获取相关成本估算。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "在学术文献库中获取4篇关于网红经济品牌营销的研究论文。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "AcademicSearch.find_papers"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'keywords'的值是什么?"
+            }
+        ]
+    },
+    "1016": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "K-pop音乐产业"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'MusicIndustry.get_structure', 'description': 'Get the structure of a music industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The music industry to analyze.'}], 'optional_parameters': [], 'return_data': [{'name': 'structure', 'description': 'A dictionary containing details about the industry structure.'}]}, {'name': 'MusicIndustry.get_profit_models', 'description': 'Get the profit models of different segments in the music industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The music industry to analyze.'}], 'optional_parameters': [], 'return_data': [{'name': 'profit_models', 'description': 'A list of dictionaries containing profit models.'}]}, {'name': 'MusicIndustry.get_case_studies', 'description': 'Get case studies of collaborations in the music industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The music industry to analyze.'}], 'optional_parameters': [], 'return_data': [{'name': 'case_studies', 'description': 'A list of dictionaries containing case studies.'}]}, {'name': 'MusicIndustry.get_optimization_suggestions', 'description': 'Get optimization suggestions for the music industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The music industry to analyze.'}], 'optional_parameters': [], 'return_data': [{'name': 'suggestions', 'description': 'A list of dictionaries containing optimization suggestions.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "获取K-pop音乐产业的结构。接下来，获取K-pop音乐产业各环节的盈利模式。然后，获取K-pop音乐产业上下游企业的合作案例。最后，获取K-pop音乐产业的优化建议，并获取潜在的发展机遇。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "获取K-pop音乐产业的结构。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "MusicIndustry.get_structure"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'industry'的值是什么?"
+            }
+        ]
+    },
+    "1017": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "电动汽车充电站网络"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'EVChargingNetwork.get_network_map', 'description': 'Get the map of an electric vehicle charging network.', 'required_parameters': [{'name': 'network', 'type': 'STRING', 'description': 'The electric vehicle charging network to analyze.'}], 'optional_parameters': [], 'return_data': [{'name': 'network_map', 'description': 'A dictionary containing details about the network map.'}]}, {'name': 'EVChargingNetwork.get_revenue_models', 'description': 'Get the revenue models of different charging stations in the network.', 'required_parameters': [{'name': 'network', 'type': 'STRING', 'description': 'The electric vehicle charging network to analyze.'}], 'optional_parameters': [], 'return_data': [{'name': 'revenue_models', 'description': 'A list of dictionaries containing revenue models.'}]}, {'name': 'EVChargingNetwork.get_partnership_cases', 'description': 'Get case studies of partnerships in the electric vehicle charging network.', 'required_parameters': [{'name': 'network', 'type': 'STRING', 'description': 'The electric vehicle charging network to analyze.'}], 'optional_parameters': [], 'return_data': [{'name': 'partnership_cases', 'description': 'A list of dictionaries containing partnership case studies.'}]}, {'name': 'EVChargingNetwork.get_optimization_advice', 'description': 'Get optimization advice for the electric vehicle charging network.', 'required_parameters': [{'name': 'network', 'type': 'STRING', 'description': 'The electric vehicle charging network to analyze.'}], 'optional_parameters': [], 'return_data': [{'name': 'optimization_advice', 'description': 'A list of dictionaries containing optimization advice.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "获取电动汽车充电站网络的地图。接下来，获取电动汽车充电站网络各站点的盈利模式。然后，获取电动汽车充电站网络上下游企业的合作案例。最后，获取电动汽车充电站网络的优化建议，并获取潜在的发展机遇。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "获取电动汽车充电站网络的地图。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "EVChargingNetwork.get_network_map"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'network'的值是什么?"
+            }
+        ]
+    },
+    "1022": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "TikTok"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'CulturalIndustryDatabase.get_fusion_cases', 'description': 'Get cases of fusion between internet celebrity economy and cultural industry.', 'required_parameters': [{'name': 'keyword', 'type': 'STRING', 'description': 'Keyword to search for in the fusion cases.'}], 'optional_parameters': [], 'return_data': [{'name': 'cases', 'description': 'A list of dictionaries containing details about the fusion cases.'}]}, {'name': 'CulturalIndustryDatabase.get_market_growth', 'description': 'Get the market growth of cultural industry due to internet celebrity economy.', 'required_parameters': [{'name': 'keyword', 'type': 'STRING', 'description': 'Keyword to search for in the market growth data.'}], 'optional_parameters': [], 'return_data': [{'name': 'growth', 'description': 'A dictionary containing the market growth data.'}]}, {'name': 'CulturalIndustryDatabase.get_innovation_models', 'description': 'Get innovation models of cultural industry using internet celebrity economy.', 'required_parameters': [{'name': 'keyword', 'type': 'STRING', 'description': 'Keyword to search for in the innovation models.'}], 'optional_parameters': [], 'return_data': [{'name': 'models', 'description': 'A list of dictionaries containing details about the innovation models.'}]}, {'name': 'CulturalIndustryDatabase.get_future_strategies', 'description': 'Get future strategies and challenges for the collaboration between internet celebrity economy and cultural industry.', 'required_parameters': [{'name': 'keyword', 'type': 'STRING', 'description': 'Keyword to search for in the strategies and challenges.'}], 'optional_parameters': [], 'return_data': [{'name': 'strategies', 'description': 'A list of dictionaries containing details about the future strategies.'}, {'name': 'challenges', 'description': 'A list of dictionaries containing details about the potential challenges.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "我想探究TikTok对文化产业的促进作用。首先，在文化产业数据库获取TikTok与文化产业融合的案例。接下来，查询文化产业因TikTok经济增长的市场规模数据。然后，获取文化产业借助TikTok创新的模式。最后，通过文化产业研究报告获取未来两者协同发展的策略，并获取可能面临的挑战。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "在文化产业数据库获取TikTok与文化产业融合的案例。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "CulturalIndustryDatabase.get_fusion_cases"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'keyword'的值是什么?"
+            }
+        ]
+    },
+    "1024": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "网红经济"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'ResearchHub.find_depth_analysis', 'description': 'Find depth analysis articles on a specific topic.', 'required_parameters': [{'name': 'topic', 'type': 'STRING', 'description': 'The topic to find depth analysis articles.'}], 'optional_parameters': [], 'return_data': [{'name': 'articles', 'description': 'A list of dictionaries containing depth analysis articles.'}]}, {'name': 'ResearchHub.query_statistics', 'description': 'Query statistics on a specific topic.', 'required_parameters': [{'name': 'topic', 'type': 'STRING', 'description': 'The topic to query statistics.'}], 'optional_parameters': [], 'return_data': [{'name': 'statistics', 'description': 'A dictionary containing statistics.'}]}, {'name': 'ResearchHub.get_operational_strategies', 'description': 'Get operational strategies and methods on a specific topic.', 'required_parameters': [{'name': 'topic', 'type': 'STRING', 'description': 'The topic to get operational strategies and methods.'}], 'optional_parameters': [], 'return_data': [{'name': 'strategies', 'description': 'A list of dictionaries containing operational strategies and methods.'}]}, {'name': 'ResearchHub.find_case_studies', 'description': 'Find case studies on a specific topic.', 'required_parameters': [{'name': 'topic', 'type': 'STRING', 'description': 'The topic to find case studies.'}], 'optional_parameters': [], 'return_data': [{'name': 'case_studies', 'description': 'A list of dictionaries containing case studies.'}]}, {'name': 'RiskAssessment.get_risk_assessment', 'description': 'Get risk assessment on a specific topic.', 'required_parameters': [{'name': 'topic', 'type': 'STRING', 'description': 'The topic to get risk assessment.'}], 'optional_parameters': [], 'return_data': [{'name': 'risk_assessment', 'description': 'A dictionary containing risk assessment.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "我打算研究网红经济中的粉丝经济模式。首先，从粉丝经济研究报告中获取3篇深度分析文章。然后，查询粉丝为网红消费的统计数据。接着，获取粉丝经济的运营策略和方法。最后，通过粉丝经济平台获取成功的粉丝经济案例，并获取相关的风险评估。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "从粉丝经济研究报告中获取3篇深度分析文章。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "ResearchHub.find_depth_analysis"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'topic'的值是什么?"
+            }
+        ]
+    },
+    "1032": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "在线教育平台VIPKID"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'EducationPlatform.get_course_catalog', 'description': 'Get the catalog of courses offered by an education platform.', 'required_parameters': [{'name': 'platform', 'type': 'STRING', 'description': 'The name of the education platform.'}], 'optional_parameters': [], 'return_data': [{'name': 'catalog', 'description': 'A list of dictionaries containing details about the courses.'}]}, {'name': 'EducationPlatform.get_student_enrollment', 'description': 'Get the number of students enrolled in a course.', 'required_parameters': [{'name': 'course_id', 'type': 'STRING', 'description': 'The ID of the course.'}], 'optional_parameters': [], 'return_data': [{'name': 'enrollment', 'description': 'The number of students enrolled in the course.'}]}, {'name': 'EducationPlatform.get_course_reviews', 'description': 'Get reviews for a course.', 'required_parameters': [{'name': 'course_id', 'type': 'STRING', 'description': 'The ID of the course.'}], 'optional_parameters': [], 'return_data': [{'name': 'reviews', 'description': 'A list of dictionaries containing reviews for the course.'}]}, {'name': 'EducationPlatform.get_platform_trends', 'description': 'Get the latest trends in the education platform.', 'required_parameters': [{'name': 'platform', 'type': 'STRING', 'description': 'The name of the education platform.'}], 'optional_parameters': [], 'return_data': [{'name': 'trends', 'description': 'A list of dictionaries containing the latest trends.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "获取在线教育平台VIPKID的课程目录。接下来，获取VIPKID某门课程的学生注册人数。然后，获取该课程的评价。最后，获取VIPKID平台的最新趋势。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "获取在线教育平台VIPKID的课程目录。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "EducationPlatform.get_course_catalog"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'platform'的值是什么?"
+            }
+        ]
+    },
+    "1036": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "TikTok"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'ShortVideoAnalytics.get_video_data', 'description': 'Get detailed analytics of a short video on a platform.', 'required_parameters': [{'name': 'platform', 'type': 'STRING', 'description': 'The short video platform.'}, {'name': 'video_id', 'type': 'STRING', 'description': 'The ID of the short video.'}], 'optional_parameters': [], 'return_data': [{'name': 'analytics', 'description': 'A dictionary containing analytics data of the video.'}]}, {'name': 'BrandAnalytics.get_conversion_data', 'description': 'Get conversion data for a brand from short video marketing.', 'required_parameters': [{'name': 'brand', 'type': 'STRING', 'description': 'The brand name.'}], 'optional_parameters': [], 'return_data': [{'name': 'conversion', 'description': 'A dictionary containing conversion data.'}]}, {'name': 'ShortVideoAnalytics.get_creation_tips', 'description': 'Get tips for creating and promoting short videos.', 'required_parameters': [], 'optional_parameters': [], 'return_data': [{'name': 'tips', 'description': 'A list of dictionaries containing tips.'}]}, {'name': 'IndustryReport.get_trends', 'description': 'Get future trends and technological innovations in the short video industry.', 'required_parameters': [], 'optional_parameters': [], 'return_data': [{'name': 'trends', 'description': 'A list of dictionaries containing trends and innovations.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "获取TikTok上热门短视频的播放量和点赞数据。接下来，查询TikTok营销为品牌带来的销售转化数据。然后，获取短视频制作和推广的技巧。最后，通过短视频行业报告获取未来短视频营销的发展方向，并获取相关的技术创新趋势。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "获取TikTok上热门短视频的播放量和点赞数据。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "ShortVideoAnalytics.get_video_data"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'platform'的值是什么?"
+            }
+        ]
+    },
+    "1041": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "直播经济"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'MarketTrends.get_trends', 'description': 'Get current trends in a specific market.', 'required_parameters': [{'name': 'market', 'type': 'STRING', 'description': 'The market to search for trends.'}], 'optional_parameters': [], 'return_data': [{'name': 'trends', 'description': 'A list of dictionaries containing information about current trends.'}]}, {'name': 'LegalInquiry.get_regulations', 'description': 'Get regulations for a specific industry.', 'required_parameters': [{'name': 'industry', 'type': 'STRING', 'description': 'The industry to search for regulations.'}], 'optional_parameters': [], 'return_data': [{'name': 'regulations', 'description': 'A list of dictionaries containing information about regulations.'}]}, {'name': 'UserFeedback.get_feedback', 'description': 'Get user feedback for a platform.', 'required_parameters': [{'name': 'platform', 'type': 'STRING', 'description': 'The name of the platform.'}], 'optional_parameters': [], 'return_data': [{'name': 'feedback', 'description': 'A list of dictionaries containing user feedback.'}]}, {'name': 'LiveStreamPlatform.get_platforms', 'description': 'Get information about live streaming platforms.', 'required_parameters': [{'name': 'category', 'type': 'STRING', 'description': 'The category of live streaming platforms to search for.'}], 'optional_parameters': [], 'return_data': [{'name': 'platforms', 'description': 'A list of dictionaries containing information about matching live streaming platforms.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "了解直播经济在教育领域的最新趋势。接下来，查询直播经济相关的行业法规。然后，收集用户对知名直播平台的反馈。最后，推荐几个专注于教育直播的平台，并分析其市场表现。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "了解直播经济在教育领域的最新趋势。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "MarketTrends.get_trends"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'market'的值是什么?"
+            }
+        ]
+    },
+    "1046": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "幸福村"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'GovDoc.get_policy_files', 'description': 'Get policy documents from government websites.', 'required_parameters': [{'name': 'keyword', 'type': 'STRING', 'description': 'Keyword to search for in the policy documents.'}], 'optional_parameters': [], 'return_data': [{'name': 'documents', 'description': 'A list of dictionaries containing details about the policy documents.'}]}, {'name': 'RuralEconomy.get_farming_data', 'description': 'Get farming data for a specific village.', 'required_parameters': [{'name': 'village_name', 'type': 'STRING', 'description': 'The name of the village.'}], 'optional_parameters': [], 'return_data': [{'name': 'data', 'description': 'A dictionary containing farming data for the village.'}]}, {'name': 'RuralEconomy.get_e_commerce_status', 'description': 'Get the current status of e-commerce in a village.', 'required_parameters': [{'name': 'village_name', 'type': 'STRING', 'description': 'The name of the village.'}], 'optional_parameters': [], 'return_data': [{'name': 'status', 'description': 'A dictionary containing details about e-commerce in the village.'}]}, {'name': 'RuralEconomy.get_population_and_labor', 'description': 'Get population structure and labor force status for a village.', 'required_parameters': [{'name': 'village_name', 'type': 'STRING', 'description': 'The name of the village.'}], 'optional_parameters': [], 'return_data': [{'name': 'details', 'description': 'A dictionary containing population and labor force details for the village.'}]}, {'name': 'RuralEconomy.get_consumption_measures', 'description': 'Get measures to promote consumption in a village.', 'required_parameters': [{'name': 'village_name', 'type': 'STRING', 'description': 'The name of the village.'}], 'optional_parameters': [], 'return_data': [{'name': 'measures', 'description': 'A list of dictionaries containing measures to promote consumption in the village.'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。\n"
+            },
+            {
+                "role": "user",
+                "content": "我打算探索幸福村的经济状况，首先，从政府网站获取3份关于乡村振兴的政策文件。然后，获取幸福村近三年养殖业的生产规模和效益数据。接着，查询幸福村当前的电商发展情况。最后，通过幸福村名称获取其人口结构和劳动力状况，并获取一些促进幸福村消费的措施。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "从政府网站获取3份关于乡村振兴的政策文件。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "GovDoc.get_policy_files"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'keyword'的值是什么?"
+            }
+        ]
+    }
+}
