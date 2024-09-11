@@ -11,34 +11,6 @@ $ cd lagent && pip install -e .
 
 ##  🛫️ Get Started
 
-我们通过[Lagent](https://github.com/Jz95585/lagent)支持API模型和本地模型.
-
-<!-- ### 💾 Test Data
-
-We provide both google drive & huggingface dataset to download test data:
-
-1. Google Drive
-
-~~[[EN data](https://drive.google.com/file/d/1ebR6WCCbS9-u2x7mWpWy8wV_Gb6ltgpi/view?usp=sharing)] (English format) [[ZH data](https://drive.google.com/file/d/1z25duwZAnBrPN5jYu9-8RMvfqnwPByKV/view?usp=sharing)] (Chinese format)~~
-[T-Eval Data](https://drive.google.com/file/d/1nQ0pn26qd0FGU8UkfSTxNdu6uWI0QXTY/view?usp=sharing)
-
-2. HuggingFace Datasets
-
-You can also access the dataset through huggingface via this [link](https://huggingface.co/datasets/lovesnowbest/T-Eval). -->
-<!-- 
-```python
-from datasets import load_dataset
-dataset = load_dataset("lovesnowbest/T-Eval")
-```
-
-After downloading, please put the data in the `data` folder directly:
-```
-- data/
-  - instruct_v2.json
-  - plan_json_v2.json
-  ...
-``` -->
-
 ### 🤖 API Models
 
 1. 设置OPENAI_API_KEY和OPENAI_API_BASE
