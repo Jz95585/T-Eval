@@ -55,6 +55,7 @@ def split_special_tokens(text):
     text = text.split('<|eot_id|>')[0]
     text = text.split('[/INST]')[0]
     text = text.split('Human:')[0]
+    text = text.split('\nsystem\n')[0]
     #
     text = text.split('<eoa>')[0]
     text = text.split('<TOKENS_UNUSED_1>')[0]

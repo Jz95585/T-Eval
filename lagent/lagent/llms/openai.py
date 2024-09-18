@@ -61,7 +61,7 @@ class GPTAPI(BaseAPIModel):
                      dict(role='user', api_role='user'),
                      dict(role='assistant', api_role='assistant'),
                      dict(role='environment', api_role='system'),
-                     dict(role='function', api_role='function')
+                     dict(role='function', api_role='user')
                  ],
                  openai_api_base: str = OPENAI_API_BASE,
                  proxies: Optional[Dict] = None,

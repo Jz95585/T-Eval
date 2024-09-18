@@ -25,12 +25,12 @@ class Config:
     """
     def __init__(self):
         #self.config: configparser.ConfigParser = self.read_config(config_file)
-        self.input_path: str = "/mnt/data3/finLLM/agent_framework/T-Eval/data1/agent_final数据/instruct_minhash.json"
-        self.output_path: str = "/mnt/data3/finLLM/agent_framework/T-Eval/data1/agent_final数据/instruct_checked_zh.json"
+        self.input_path: str = "/mnt/data3/finLLM/agent_framework/T-Eval/data1/agent_final数据2/plan_checked_zh.json"
+        self.output_path: str = "/mnt/data3/finLLM/agent_framework/T-Eval/data1/agent_final数据2/plan_checked_zh.json"
         self.num_examples: int = 1000
         self.jaccard_threshold: float = 0.8
         # self.model: str = "gpt-3.5-turbo"
-        #self.model: str = "Glm-4-Flash"
+        # self.model: str = "Glm-4-Flash"
         self.model: str = "deepseek-chat"
         self.temperature: float = 0.01
         self.top_p: float = 1
@@ -188,7 +188,7 @@ def generate_prompt(row) -> str:
     # output_data = row["ground_truth"]['name']
     # #reason数据
     # output_data = row["ground_truth"]['thought']
-    #instruct，plan不用筛选
+    #instruct,plan不筛选,rru数据
     output_data = row["ground_truth"]
 
     if input_data != "" or input_data == "Noinput":
