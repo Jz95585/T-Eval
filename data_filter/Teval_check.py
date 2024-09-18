@@ -25,8 +25,8 @@ class Config:
     """
     def __init__(self):
         #self.config: configparser.ConfigParser = self.read_config(config_file)
-        self.input_path: str = "/mnt/data3/finLLM/agent_framework/T-Eval/data1/agent_final数据2/plan_checked_zh.json"
-        self.output_path: str = "/mnt/data3/finLLM/agent_framework/T-Eval/data1/agent_final数据2/plan_checked_zh.json"
+        self.input_path: str = "/mnt/data3/finLLM/agent_framework/T-Eval/data1/agent_final数据/plan_checked_zh.json"
+        self.output_path: str = "/mnt/data3/finLLM/agent_framework/T-Eval/data1/agent_final数据/plan_checked_zh.json"
         self.num_examples: int = 1000
         self.jaccard_threshold: float = 0.8
         # self.model: str = "gpt-3.5-turbo"

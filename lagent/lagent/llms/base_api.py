@@ -106,6 +106,7 @@ class APITemplateParser:
         elif isinstance(prompts, dict):
             api_role = self._role2api_role(prompts)
             return api_role
+        res = []
         #对于非rru格式数据
         if prompts[-1]['role']=='user':
             #把除了第一个system之后的system都改为function
@@ -118,7 +119,6 @@ class APITemplateParser:
                     prompt['role']='function'
                     
             #处理role为function的字段
-            res = []
             index=[]
             content=''
             for prompt in prompts:
