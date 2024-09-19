@@ -3847,10 +3847,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'region'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Europe"
             }
         ]
     },
@@ -4132,49 +4128,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'region'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Europe"
-            }
-        ]
-    },
-    "103": {
-        "template": null,
-        "meta_data": {
-            "response_format": "str"
-        },
-        "ground_truth": {
-            "args": "Dow Chemical"
-        },
-        "origin_prompt": [
-            {
-                "role": "system",
-                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'FinancialData.get_inflation_rate', 'description': '获取特定公司或行业的通胀率预期数据。', 'required_parameters': [{'name': 'company_name', 'type': 'STRING', 'description': '公司名称'}], 'optional_parameters': [], 'return_data': [{'name': 'inflation_rate', 'description': '通胀率预期数据'}]}, {'name': 'StockMarket.get_stock_price', 'description': '获取特定公司的股价数据。', 'required_parameters': [{'name': 'company_name', 'type': 'STRING', 'description': '公司名称'}], 'optional_parameters': [], 'return_data': [{'name': 'stock_price', 'description': '股价数据'}]}, {'name': 'FinancialData.compare_industry_responses', 'description': '比较不同地区化工行业对通胀率的反应。', 'required_parameters': [{'name': 'region', 'type': 'STRING', 'description': '地区名称'}], 'optional_parameters': [], 'return_data': [{'name': 'response_analysis', 'description': '行业反应分析'}]}]\n如果你已经知道答案，请调用FinishAction来提供最终的回复。"
-            },
-            {
-                "role": "user",
-                "content": "我想分析2024年全球通胀率预期对化工行业的影响。首先，请获取主要化工公司的通胀率预期数据。然后，分析这些公司的股价与通胀率之间的关系。接下来，比较不同地区化工行业对通胀率的反应。最后，基于这些分析，提供一些关于化工行业投资策略的建议。当前这一步的目标是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "获取主要化工公司的通胀率预期数据。"
-            },
-            {
-                "role": "user",
-                "content": "当前这一步要调用的工具名称是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "FinancialData.get_inflation_rate"
-            },
-            {
-                "role": "user",
-                "content": "当前工具的参数'company_name'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Dow Chemical"
             }
         ]
     },
@@ -4266,10 +4219,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'industry'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "煤炭行业"
             }
         ]
     },
@@ -10520,10 +10469,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'market_name'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Global Carbon Emission Trading Market"
             }
         ]
     },
@@ -10567,10 +10512,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'market'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "全球电动车市场"
             }
         ]
     },
@@ -10606,10 +10547,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'market'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "2024 Global Electric Vehicle Market"
             }
         ]
     },
@@ -10645,10 +10582,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'market'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "2024 Global Electric Vehicle Market"
             }
         ]
     },
@@ -10684,10 +10617,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'country'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Germany"
             }
         ]
     },
@@ -10723,10 +10652,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'industry'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Automotive Industry"
             }
         ]
     },
@@ -10762,10 +10687,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'company_name'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Company A"
             }
         ]
     },
@@ -10801,10 +10722,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'region'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "East Asia"
             }
         ]
     },
@@ -10840,10 +10757,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'market_sector'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Tech Sector"
             }
         ]
     },
@@ -10879,10 +10792,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'product'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "smartphones"
             }
         ]
     },
@@ -10918,10 +10827,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'country'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Germany"
             }
         ]
     },
@@ -10957,10 +10862,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'industry'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Automotive Industry"
             }
         ]
     },
@@ -10996,10 +10897,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'company_name'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Company A"
             }
         ]
     },
@@ -11035,10 +10932,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'product'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "iPhone"
             }
         ]
     },
@@ -11074,10 +10967,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'country'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Japan"
             }
         ]
     },
@@ -11113,10 +11002,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'industry'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Automotive Industry"
             }
         ]
     },
@@ -11152,10 +11037,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'company_name'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Company B"
             }
         ]
     },
@@ -11191,10 +11072,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'country'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Germany"
             }
         ]
     },
@@ -11230,10 +11107,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'industry'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Automotive Industry"
             }
         ]
     },
@@ -11269,10 +11142,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'company_name'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Company B"
             }
         ]
     },
@@ -11308,10 +11177,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'country'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "United States"
             }
         ]
     },
@@ -11347,10 +11212,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'industry'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Automotive Industry"
             }
         ]
     },
@@ -11386,10 +11247,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'company_name'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Apple Inc."
             }
         ]
     },
@@ -11425,10 +11282,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'country'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Brazil"
             }
         ]
     },
@@ -11464,10 +11317,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'company_name'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Apple Inc."
             }
         ]
     },
@@ -11546,10 +11395,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'country'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Germany"
             }
         ]
     },
@@ -11593,10 +11438,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'market'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Southeast Asia"
             }
         ]
     },
@@ -11847,10 +11688,6 @@
             {
                 "role": "user",
                 "content": "当前工具的参数'company_or_topic'的值是什么?"
-            },
-            {
-                "role": "assistant",
-                "content": "Tencent, Philippines"
             }
         ]
     }
