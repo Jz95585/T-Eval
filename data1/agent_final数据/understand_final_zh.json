@@ -1,4 +1,139 @@
 {
+    "1": {
+        "template": null,
+        "meta_data": {
+            "response_format": "str"
+        },
+        "ground_truth": {
+            "args": "中国央行降准及各国汽车政策"
+        },
+        "origin_prompt": [
+            {
+                "role": "system",
+                "content": "你是一个可以使用外部工具的助手。你可以调用以下的工具:\n[{'name': 'StockMarket.get_stock_prices', 'description': '获取指定股票在特定时间段内的股价数据。', 'required_parameters': [{'name': 'stock_symbol', 'type': 'STRING', 'description': '股票代码'}], 'optional_parameters': [{'name': 'start_date', 'type': 'STRING', 'description': '开始日期'}, {'name': 'end_date', 'type': 'STRING', 'description': '结束日期'}], 'return_data': [{'name': 'prices', 'description': '股价数据列表'}]}, {'name': 'EconomicPolicy.get_policy_data', 'description': '获取特定经济体的汽车政策数据。', 'required_parameters': [{'name': 'country', 'type': 'STRING', 'description': '国家名称'}], 'optional_parameters': [], 'return_data': [{'name': 'policy_data', 'description': '政策数据'}]}, {'name': 'Investment.analyze_market_impact', 'description': '分析特定事件对市场的影响。', 'required_parameters': [{'name': 'event', 'type': 'STRING', 'description': '事件名称'}], 'optional_parameters': [], 'return_data': [{'name': 'impact_analysis', 'description': '影响分析结果'}]}]"
+            },
+            {
+                "role": "user",
+                "content": "我想了解中国央行降准对全球汽车市场的影响。首先，请提供降准前后全球主要汽车制造商股价的变化数据。然后，分析这些变化对全球汽车销售的影响。接着，获取主要经济体的汽车政策数据，以评估降准的长期效应。最后，基于这些分析，提供一些关于汽车市场投资策略的建议。当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "获取降准前后全球主要汽车制造商股价的变化数据。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "StockMarket.get_stock_prices"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'stock_symbol'的值是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "BMW, VW, Toyota"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'start_date'的值是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "2023-01-01"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'end_date'的值是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "2023-12-31"
+            },
+            {
+                "role": "function",
+                "content": "{'prices': [{'symbol': 'BMW', 'dates': ['2023-01-01', '2023-01-02', '2023-01-03'], 'prices': [80, 81, 82]}, {'symbol': 'VW', 'dates': ['2023-01-01', '2023-01-02', '2023-01-03'], 'prices': [20, 21, 22]}, {'symbol': 'Toyota', 'dates': ['2023-01-01', '2023-01-02', '2023-01-03'], 'prices': [150, 151, 152]}]}"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "分析股价变化对全球汽车销售的影响。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "Investment.analyze_market_impact"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'event'的值是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "中国央行降准"
+            },
+            {
+                "role": "function",
+                "content": "{'impact_analysis': '降准导致汽车制造商股价上涨，进而可能刺激全球汽车销售。'}"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "获取主要经济体的汽车政策数据。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "EconomicPolicy.get_policy_data"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'country'的值是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "美国, 德国, 日本"
+            },
+            {
+                "role": "function",
+                "content": "{'policy_data': [{'country': '美国', 'policy': '鼓励电动汽车发展'}, {'country': '德国', 'policy': '提供购车补贴'}, {'country': '日本', 'policy': '支持氢能源汽车'}]}"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步的目标是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "基于分析提供汽车市场投资策略建议。"
+            },
+            {
+                "role": "user",
+                "content": "当前这一步要调用的工具名称是什么?"
+            },
+            {
+                "role": "assistant",
+                "content": "Investment.analyze_market_impact"
+            },
+            {
+                "role": "user",
+                "content": "当前工具的参数'event'的值是什么?"
+            }
+        ]
+    },
     "2": {
         "template": null,
         "meta_data": {

@@ -11,7 +11,6 @@ def main():
     with open(file_name, 'r') as file:
         data = json.load(file)
         data1={}
-        # 遍历 JSON 数据并检查相似性
         for key,value in data.items():
             new_key = key + "_1"
             data1[new_key] = value
