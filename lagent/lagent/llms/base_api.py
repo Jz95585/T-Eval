@@ -123,7 +123,7 @@ class APITemplateParser:
             content=''
             for prompt in prompts:
                 if prompt['role']=='function':
-                    content='接下来要调用的工具的参数为：'+prompt['content']
+                    content='上一步调用的工具的返回结果为：'+prompt['content']
                 else:
                     if content=='':
                         index.append(prompt)

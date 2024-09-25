@@ -96,6 +96,12 @@ class InstructEvaluator:
 
     def string_format_parse(self, data_sample):
         pred_data = data_sample.pred
+        if "想法：" in pred_data:
+            pred_data=pred_data.replace("想法：","想法:")
+        if "动作：" in pred_data:
+            pred_data=pred_data.replace("动作：","动作:")
+        if "动作参数：" in pred_data:
+            pred_data=pred_data.replace("动作参数：","动作参数:")        
         template = data_sample.template
         thought_start = template['thought_start']
         thought_end = template['thought_end']

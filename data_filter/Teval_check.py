@@ -25,8 +25,8 @@ class Config:
     """
     def __init__(self):
         #self.config: configparser.ConfigParser = self.read_config(config_file)
-        self.input_path: str = "/mnt/data3/finLLM/agent_framework/T-Eval/data1/agent_final数据/plan_checked_zh.json"
-        self.output_path: str = "/mnt/data3/finLLM/agent_framework/T-Eval/data1/agent_final数据/plan_checked_zh.json"
+        self.input_path: str = "/mnt/data3/finLLM/agent_framework/T-Eval/data1/agent_final数据/reason_checked_zh.json"
+        self.output_path: str = "/mnt/data3/finLLM/agent_framework/T-Eval/data1/agent_final数据/reason_checked_zh.json"
         self.num_examples: int = 1000
         self.jaccard_threshold: float = 0.8
         # self.model: str = "gpt-3.5-turbo"
@@ -186,10 +186,10 @@ def generate_prompt(row) -> str:
     # output_data = row["ground_truth"]['answer']
     # #retrieve数据
     # output_data = row["ground_truth"]['name']
-    # #reason数据
-    # output_data = row["ground_truth"]['thought']
-    #instruct,plan不筛选,rru数据
-    output_data = row["ground_truth"]
+    #reason数据
+    output_data = row["ground_truth"]['thought']
+    # #instruct,plan不筛选,rru数据
+    # output_data = row["ground_truth"]
 
     if input_data != "" or input_data == "Noinput":
         prompt = f"Following the format <yes/no>||<explanation why yes or no>. Given the following instruction: {instruction} and the following input: {input_data}, is the output '{output_data}' correct?"

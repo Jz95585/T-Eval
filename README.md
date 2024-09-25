@@ -1,5 +1,5 @@
 ## Introduction
-这项工作是在Teval的代码框架的基础上构建的金融benchmark. 和原版的Teval一样，我们评估模型在以下六个维度的能力: instruct, plan, reason, retrieve, understand, 以及 review.
+这项工作是在Teval的代码框架的基础上构建的金融benchmark. 和原版的Teval一样，我们评估模型在以下六个维度的能力: instruct, plan, reason, retrieve, understand 以及 review.
 ## 🛠️ Preparations
 
 ```bash
@@ -18,15 +18,7 @@ $ cd lagent && pip install -e .
 export OPENAI_API_KEY=xxxxxxxxx
 export OPENAI_API_BASE=xxxxxxxxx
 ```
-2. 使用以下脚本运行评测(model_name 可以是OpenAI模型的名字或者支持OpenAI方式调用的模型，例如deepseek-chat)
-<!-- ```bash
-# test all data at once
-sh test_all_en.sh api gpt-4-1106-preview gpt4
-# test ZH dataset
-sh test_all_zh.sh api gpt-4-1106-preview gpt4
-# test for Instruct only
-python test.py --model_type api --model_path gpt-4-1106-preview --resume --out_name instruct_gpt4.json --out_dir work_dirs/gpt4/ --dataset_path data/instruct_v2.json --eval instruct --prompt_type json
-``` -->
+2. 使用以下脚本运行评测(model_name 可以是OpenAI模型或者支持openai库调用的模型，例如deepseek-chat)
 ```bash
 sh test.sh model_name
 ```
@@ -34,12 +26,11 @@ sh test.sh model_name
 ### 🤗 HuggingFace Models
 
 1. 下载HuggingFace模型到你的本地路径.
-<!-- 2. Modify the `meta_template` json according to your tested model. -->
 2. 使用vllm部署你的模型
 ```bash
-CUDA_VISIBLE_DEVICES=1,2,3,4 python -m vllm.entrypoints.openai.api_server \
+CUDA_VISIBLE_DEVICES=0,1 python -m vllm.entrypoints.openai.api_server \
     --model model_local_path \
-    --tensor-parallel-size 4 \
+    --tensor-parallel-size 2 \
     --gpu-memory-utilization 0.9 \
     --served-model-name model_name \
     --block-size 16  \
@@ -48,21 +39,13 @@ CUDA_VISIBLE_DEVICES=1,2,3,4 python -m vllm.entrypoints.openai.api_server \
 ```
 3. 使用以下脚本运行评测
 ```bash
-export MKL_THREADING_LAYER=GNU
-export MKL_SERVICE_FORCE_INTEL=1
-export OPENAI_API_KEY="EMPTY"
+export MKL_THREADING_LAYER=GNU \
+export MKL_SERVICE_FORCE_INTEL=1 \
+export OPENAI_API_KEY="EMPTY" \
 export OPENAI_API_BASE=http://0.0.0.0:8081/v1
 
 sh test.sh model_name
 ```
-<!-- ```bash
-# test all data at once
-sh test_all_en.sh hf $HF_PATH $HF_MODEL_NAME $META_TEMPLATE
-# test ZH dataset
-sh test_all_zh.sh hf $HF_PATH $HF_MODEL_NAME $META_TEMPLATE
-# test for Instruct only
-python test.py --model_type hf --model_path $HF_PATH --resume --out_name instruct_$HF_MODEL_NAME.json --out_dir data/work_dirs/ --dataset_path data/instruct_v1.json --eval instruct --prompt_type json --model_display_name $HF_MODEL_NAME --meta_template $META_TEMPLATE
-``` -->
 
 ### 💫 Final Results
 一旦你测试完了所有的数据，结果的细节会放在 `out_dirs/model_name/model_name_-1_zh.json`  通过以下命令计算最终分数:
